@@ -1,65 +1,51 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { RapperContent } from "../App";
 const Courses = () => {
+  const {isAuthenticated} = useContext(RapperContent)
   const callouts = [
     {
-      name: "Adventures",
-      description: "Math",
+      name: "Troisième",
+      description: "Anglais",
       imageSrc: "/math.jpg",
       imageAlt:
         "Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.",
       href: "#",
     },
     {
-      name: "Explorers",
-      description: "Science ",
+      name: "Troisième",
+      description: "Sciences de la Vie et de la Terre  ",
       imageSrc: "/science.jpg",
       imageAlt:
         "Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.",
       href: "#",
     },
     {
-      name: "Adventures",
-      description: "Geography",
+      name: "Troisième",
+      description: "Histoire",
       imageSrc: "/geo.jpg",
       imageAlt: "Collection of four insulated travel bottles on wooden shelf.",
       href: "#",
     },
     {
-      name: "Adventures",
-      description: "Math",
-      imageSrc: "/math.jpg",
-      imageAlt:
-        "Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.",
-      href: "#",
-    },
-    {
-      name: "Explorers",
-      description: "Science ",
-      imageSrc: "/science.jpg",
-      imageAlt:
-        "Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.",
-      href: "#",
-    },
-    {
-      name: "Adventures",
-      description: "Geography",
-      imageSrc: "/geo.jpg",
+      name: "Géniale",
+      description: "Philosophie",
+      imageSrc: "/faq.webp",
       imageAlt: "Collection of four insulated travel bottles on wooden shelf.",
       href: "#",
     },
+
   ];
   return (
     <div>
-      <div className="bg-gray-100 ">
+      <div className="bg-gray-100 min-h-screen">
         <div className="mx-auto max-w-7xl pt-20 px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-20">
-            <h2 className="text-4xl font-bold text-center text-gray-900 pb-10">Our Courses</h2>
+            <h2 className="text-4xl font-bold text-center text-gray-900 pb-10">Médiathèque </h2>
 
             <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 gap-y-9 lg:space-y-0">
               {callouts.map((callout) => (
-                <Link to="/video/1" key={callout.name} className="group relative">
+                <Link to={isAuthenticated ? "/dashboard": "/login"} key={callout.name} className="group relative">
                   <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                     <img
                       src={callout.imageSrc}

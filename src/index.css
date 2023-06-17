@@ -59,3 +59,41 @@
   .custom-video-controls::-webkit-media-controls-time-remaining-display {
     color: #000000; /* Set time remaining color */
   }
+
+
+  .heading_gradient,
+.text-gradient {
+  -webkit-text-fill-color: transparent;
+}
+
+.heading_gradient {
+  background: #000;
+  background-color: #000;
+  background-image: radial-gradient(circle, #c058ff 0, #ff5858 26%, #000 27%);
+  background-position: 100% 100%;
+  background-size: 150%;
+  animation-name: bg-circle;
+  animation-duration: 10s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+}
+@keyframes bg-circle {
+  0% {
+    background-size: 350%;
+    background-position: left 100% bottom 0;
+    /* background: rgb(201, 201, 201); */
+  }
+
+  50% {
+    background-size: 350%;
+    background-position: left -10% bottom 0;
+  }
+
+  to {
+    background-size: 350%;
+    background-position: left 100% bottom 0;
+  }
+}

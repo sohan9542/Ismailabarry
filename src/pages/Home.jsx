@@ -3,7 +3,17 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import { CalendarDaysIcon, HandRaisedIcon } from "@heroicons/react/24/outline";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import {
+  AiFillVideoCamera,
+  AiOutlineFilePdf,
+  AiOutlineCheckCircle,
+  AiOutlineUsergroupAdd,
+  AiOutlineBook,
+  AiOutlineMobile,
+} from "react-icons/ai";
+import { BsFillChatDotsFill } from "react-icons/bs";
+import { IoMdSchool } from "react-icons/io";
 
 export default function Home() {
   return (
@@ -14,31 +24,30 @@ export default function Home() {
             <img src="/logo.png" className="lg:h-96" alt="" />
           </div>
           <div className="w-full mt-5">
-            <div className="lg:max-w-2xl mx-auto">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Let's make learning fun!
+            <div className="lg:max-w-4xl mx-auto">
+              <h1 className="text-4xl heading_gradient text-center font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Rendons l'apprentissage plus ludique !
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                <span className="text-pr font-medium"> Jangflix</span> - Where
-                studying feels like watching your favorite TV show. It's an
-                innovative and interactive learning platform designed
-                specifically for kids. Our mission is to make learning engaging,
-                fun, and accessible, empowering young minds to explore the
-                wonders of{" "}
-                <span className="text-pr font-medium">education</span>.
+              <p className="mt-6 text-lg leading-8 text-center text-gray-600">
+                <span className="text-pr font-medium "> Jangflix 'est </span>{" "}
+                une plateforme d'apprentissage innovante et interactive conçue
+                spécifiquement pour les élèves du collège et du lycée. Notre
+                mission est de rendre l'apprentissage engageant, amusant et
+                accessible, en permettant aux jeunes esprits d'explorer les
+                merveilles de l'éducation.
               </p>
-              <div className="mt-10 flex items-center  gap-x-6">
+              <div className="mt-10 flex items-center justify-center  gap-x-6">
                 <Link
                   to="/sign-up"
                   className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
                 >
-                  Get started
+                  Découvrir
                 </Link>
                 <Link
                   to="/courses"
                   className="text-sm font-semibold hover:text-pr leading-6 text-gray-900"
                 >
-                  Learn more <span aria-hidden="true">→</span>
+                  En savoir plus <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>
@@ -49,8 +58,7 @@ export default function Home() {
       <JangflixFor />
       <Testimonials />
       <Courses />
-      <FaqSection/>
-   
+      <FaqSection />
 
       <Pricing />
       <Trusted />
@@ -75,24 +83,24 @@ export default function Home() {
 */
 const callouts = [
   {
-    name: "Adventures",
-    description: "Math",
+    name: "Troisième",
+    description: "Anglais",
     imageSrc: "/math.jpg",
     imageAlt:
       "Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.",
     href: "#",
   },
   {
-    name: "Explorers",
-    description: "Science ",
+    name: "Troisième",
+    description: "Sciences de la Vie et de la Terre  ",
     imageSrc: "/science.jpg",
     imageAlt:
       "Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.",
     href: "#",
   },
   {
-    name: "Adventures",
-    description: "Geography",
+    name: "Troisième",
+    description: "Histoire",
     imageSrc: "/geo.jpg",
     imageAlt: "Collection of four insulated travel bottles on wooden shelf.",
     href: "#",
@@ -100,25 +108,25 @@ const callouts = [
 ];
 const callouts2 = [
   {
-    name: "You are a parent looking for a single subscription for your child",
+    name: "Je suis un parent à la recherche d'un accompagnement scolaire  pour mon enfant.    ",
     description: "Math",
-    imageSrc: "/1.jpg",
+    imageSrc: "/t.jpg",
     imageAlt:
       "Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.",
     href: "#",
   },
   {
-    name: "You are a parent looking for a single subscription for your child",
+    name: "Je suis enseignant et je souhaite faire découvrir Jangflix à mes élèves.",
     description: "Math",
-    imageSrc: "/2.jpg",
+    imageSrc: "/p.jpg",
     imageAlt:
       "Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.",
     href: "#",
   },
   {
-    name: "You are a parent looking for a single subscription for your child",
+    name: "Nous sommes une institution et souhaitons parrainer des élèves.",
     description: "Math",
-    imageSrc: "/3.jpg",
+    imageSrc: "/c.jpg",
     imageAlt:
       "Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.",
     href: "#",
@@ -127,11 +135,11 @@ const callouts2 = [
 
 function Courses() {
   return (
-    <div >
+    <div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-16  lg:max-w-none ">
           <h2 className="text-4xl font-bold text-gray-900 text-center">
-            What you can learn
+            Médiathièque
           </h2>
 
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-10 lg:space-y-0">
@@ -161,7 +169,7 @@ function Courses() {
               to="/courses"
               className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
             >
-              View All Courses
+              Voir plus
             </Link>
           </div>
         </div>
@@ -176,7 +184,7 @@ function JangflixFor() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-16  lg:max-w-none ">
           <h2 className="text-4xl font-bold text-gray-900">
-            Who is Jangflix for?
+            À qui s'adresse la plateforme Jangflix :
           </h2>
 
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-10 lg:space-y-0">
@@ -201,16 +209,11 @@ function JangflixFor() {
   );
 }
 
-const links = [
-  { name: "Best Courses", href: "/courses" },
-  { name: "Meet our leadership", href: "/about" },
-  { name: "Contact Us", href: "/contact" },
-];
 const stats = [
-  { name: "Online Courses", value: "12" },
-  { name: "Students", value: "300+" },
-  { name: "Teachers", value: "40" },
-  { name: "Online Support", value: "24/7" },
+  { name: "semaines d’essayage gratuit", value: "8" },
+  { name: "Vidéos en cours d’enregistrement", value: "300+" },
+  { name: "Professeurs de renommée", value: "25" },
+  { name: "Élèves pour la phase test", value: "250+ " },
 ];
 
 function Services() {
@@ -221,37 +224,28 @@ function Services() {
         alt=""
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
-      <div
-        className="absolute bg-[#451019c6] top-0 left-0 w-full h-full z-10"
-       
-      ></div>
+      <div className="absolute bg-[#451019c6] top-0 left-0 w-full h-full z-10"></div>
 
       <div className="mx-auto max-w-7xl relative z-20 px-6 lg:px-8">
         <div className=" max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            Learn from experts
+            Apprenez des meilleurs
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            Our teachers are carefully selected and trained on how to best
-            deliver content online. Keep track of your progress and access all
-            your materials conveniently through the student portal.
+            Nos enseignants sont soigneusement sélectionnés et formés sur la
+            meilleure façon de diffuser du contenu en ligne. Vous aurez
+            également un portail étudiant où vous pourrez directement accéder
+            aux synthèses de cours ainsi que posez vos questions.
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-            {links.map((link) => (
-              <Link key={link.name} className="hover:text-sr" to={link.href}>
-                {link.name} <span aria-hidden="true">&rarr;</span>
-              </Link>
-            ))}
-          </div>
           <dl className="mt-16 grid grid-cols-2 gap-8 sm:mt-20  lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse">
                 <dt className="text-base leading-7 text-gray-300">
                   {stat.name}
                 </dt>
-                <dd className="text-4xl font-bold leading-9 tracking-tight text-white">
+                <dd className="text-4xl pt-3 font-bold leading-9 tracking-tight text-white">
                   {stat.value}
                 </dd>
               </div>
@@ -270,46 +264,82 @@ const includedFeatures = [
   "Official member t-shirt",
 ];
 
+const iconsAndDescriptions = [
+  {
+    icon: <AiFillVideoCamera className="text-pr"/>,
+    description: "Tous les cours en vidéos",
+  },
+  {
+    icon: <AiOutlineUsergroupAdd className="text-pr"/>,
+    description: "Travaux pratique",
+  },
+  {
+    icon: <BsFillChatDotsFill className="text-pr"/>,
+    description: "Correction de TD",
+  },
+  {
+    icon: <AiOutlineFilePdf className="text-pr"/>,
+    description: "Fiches synthétiques de cours",
+  },
+  {
+    icon: <AiOutlineCheckCircle className="text-pr"/>,
+    description: "Suivi de progression",
+  },
+  {
+    icon: <AiOutlineUsergroupAdd className="text-pr"/>,
+    description: "Accès à la communauté",
+  },
+  {
+    icon: <IoMdSchool className="text-pr"/>,
+    description: "Support professoral",
+  },
+  {
+    icon: <AiOutlineBook className="text-pr"/>,
+    description: "Révisions en ligne",
+  },
+  {
+    icon: <AiOutlineMobile className="text-pr"/>,
+    description: "Accès aux applications mobile",
+  },
+];
+
 function Pricing() {
   return (
     <div className="bg-white py-16 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto mt-16 w-full rounded-3xl ring-1 ring-gray-200 pt-5 ">
           <h2 className=" text-xl lg:text-4xl font-bold tracking-tight text-gray-900  text-center">
-            Pricing
+            Abonnements
           </h2>
           <div className=" p-5 mt-0 w-full grid grid-cols-1 lg:grid-cols-3 gap-5 ">
             <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto px-8 ">
-                <p className="text-base font-semibold text-gray-600">Monthly</p>
+                <p className="text-base font-semibold text-gray-600">Mensuel</p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
                   <span className="text-5xl font-bold tracking-tight text-gray-900">
-                    $349
+                    0,00 
                   </span>
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                    USD
+                  FCFA
                   </span>
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/login"
                   className="mt-10 block w-full rounded-md bg-pr px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-sr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
                 >
-                  Get access
-                </a>
+                  Essayer Gratuitement
+                </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Invoices and receipts available for easy company reimbursement
+                 Vous disposez d’une période gratuite d’essai de 8 semaines.
                 </p>
                 <ul
                   role="list"
                   className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:gap-6"
                 >
-                  {includedFeatures.map((feature) => (
-                    <li key={feature} className="flex gap-x-3">
-                      <CheckIcon
-                        className="h-6 w-5 flex-none text-pr"
-                        aria-hidden="true"
-                      />
-                      {feature}
+                  {iconsAndDescriptions.map(({ icon, description }) => (
+                    <li key={description} className="flex items-center gap-x-3">
+                      {icon}
+                      {description}
                     </li>
                   ))}
                 </ul>
@@ -318,36 +348,34 @@ function Pricing() {
             <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto px-8 ">
                 <p className="text-base font-semibold text-gray-600">
-                  Quarterly
+                Trimestriel
                 </p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
                   <span className="text-5xl font-bold tracking-tight text-gray-900">
-                    $349
+                    0,00 
                   </span>
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                    USD
+                  FCFA
                   </span>
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/login"
                   className="mt-10 block w-full rounded-md bg-pr px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-sr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
                 >
-                  Get access
-                </a>
+                  Essayer Gratuitement
+                </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Invoices and receipts available for easy company reimbursement
+                Vous disposez d’une période gratuite d’essai de 8 semaines.
+
                 </p>
                 <ul
                   role="list"
                   className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:gap-6"
                 >
-                  {includedFeatures.map((feature) => (
-                    <li key={feature} className="flex gap-x-3">
-                      <CheckIcon
-                        className="h-6 w-5 flex-none text-pr"
-                        aria-hidden="true"
-                      />
-                      {feature}
+                  {iconsAndDescriptions.map(({ icon, description }) => (
+                    <li key={description} className="flex items-center gap-x-3">
+                      {icon}
+                      {description}
                     </li>
                   ))}
                 </ul>
@@ -355,40 +383,41 @@ function Pricing() {
             </div>
             <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto px-8 ">
-                <p className="text-base font-semibold text-gray-600">Annual</p>
+                <p className="text-base font-semibold text-gray-600">
+                Annuel
+                </p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
                   <span className="text-5xl font-bold tracking-tight text-gray-900">
-                    $349
+                    0,00 
                   </span>
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                    USD
+                  FCFA
                   </span>
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/login"
                   className="mt-10 block w-full rounded-md bg-pr px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-sr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
                 >
-                  Get access
-                </a>
+                  Essayer Gratuitement
+                </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Invoices and receipts available for easy company reimbursement
+                Vous disposez d’une période gratuite d’essai de 8 semaines.
+
                 </p>
                 <ul
                   role="list"
                   className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:gap-6"
                 >
-                  {includedFeatures.map((feature) => (
-                    <li key={feature} className="flex gap-x-3">
-                      <CheckIcon
-                        className="h-6 w-5 flex-none text-pr"
-                        aria-hidden="true"
-                      />
-                      {feature}
+                  {iconsAndDescriptions.map(({ icon, description }) => (
+                    <li key={description} className="flex items-center gap-x-3">
+                      {icon}
+                      {description}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
+       
           </div>
         </div>
       </div>
@@ -403,43 +432,32 @@ function Trusted() {
         <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
           Trusted by the world’s most innovative teams
         </h2>
-        <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+      <div className="flex items-center justify-center">
+      <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center  gap-x-8 gap-y-10  lg:grid-cols-3 ">
           <img
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg"
+            className="col-span-2 w-full object-contain lg:col-span-1"
+            src="/navi.jpeg"
             alt="Transistor"
             width={158}
             height={48}
           />
           <img
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg"
+            className="col-span-2  w-full object-contain lg:col-span-1"
+            src="/ari.webp"
             alt="Reform"
             width={158}
             height={48}
           />
           <img
-            className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg"
+            className="col-span-2 w-full object-contain lg:col-span-1"
+            src="/intech .png"
             alt="Tuple"
             width={158}
             height={48}
           />
-          <img
-            className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg"
-            alt="SavvyCal"
-            width={158}
-            height={48}
-          />
-          <img
-            className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-            src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
-            alt="Statamic"
-            width={158}
-            height={48}
-          />
+        
         </div>
+      </div>
       </div>
     </div>
   );
@@ -449,14 +467,14 @@ function Subscribe() {
   return (
     <div className="relative isolate overflow-hidden bg-[#451019] py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-          <div className="max-w-xl lg:max-w-lg">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+          <div className="  lg:col-span-2">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Subscribe to our newsletter.
+            Abonnez-vous à notre newsletter
+
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-              Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing
-              velit quis. Duis tempor incididunt dolore.
+            “Jangflix est en constante expansion et croissance. Notre newsletter vous informera de nos ajouts de contenu les plus récents, des cours en direct programmés ou des sessions de questions et vous fournira des informations générales sur nos professeurs.”
             </p>
             <div className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
@@ -469,30 +487,18 @@ function Subscribe() {
                 autoComplete="email"
                 required
                 className="min-w-0 flex-auto rounded-md border border-white bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-                placeholder="Enter your email"
+                placeholder="Entrer votre Email                "
               />
               <button
                 type="submit"
                 className="flex-none rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:text-pr"
               >
-                Subscribe
+                S'abonner
               </button>
             </div>
           </div>
-          <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-            <div className="flex flex-col items-start">
-              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                <CalendarDaysIcon
-                  className="h-6 w-6 text-white"
-                  aria-hidden="true"
-                />
-              </div>
-              <dt className="mt-4 font-semibold text-white">Weekly articles</dt>
-              <dd className="mt-2 text-sm text-gray-50">
-                Non laboris consequat cupidatat laborum magna. Eiusmod non irure
-                cupidatat duis commodo amet.
-              </dd>
-            </div>
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-10 ">
+           
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                 <HandRaisedIcon
@@ -500,34 +506,34 @@ function Subscribe() {
                   aria-hidden="true"
                 />
               </div>
-              <dt className="mt-4 font-semibold text-white">No spam</dt>
+              <dt className="mt-4 font-semibold text-white">Non au Spam</dt>
               <dd className="mt-2 text-sm text-gray-50">
-                Officia excepteur ullamco ut sint duis proident non adipisicing.
-                Voluptate incididunt anim.
+              “Ne vous inquiétez pas, nous ne vous enverrons pas des tonnes d'e-mails. Les newsletters ne seront envoyées que s'il y a des informations pertinentes à partager et le contenu sera court et précis.”
+
               </dd>
             </div>
           </dl>
         </div>
       </div>
-     
     </div>
   );
 }
 
 function Testimonials() {
   return (
-    <div  className=" pt-24 pb-32 bg-[#451019]">
+    <div className=" pt-24 pb-32 bg-[#451019]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-4xl font-semibold leading-8 text-white">
-          What People Say About Jangflix
+          Ce que les gens disent de Jangflix ?
         </h2>
         <di className=" grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
           <div className="bg-white p-4 rounded-xl">
-            <h1 className="text-xl font-semibold">John Mark</h1>
+            <h1 className="text-xl font-semibold">Adji Marième Diop</h1>
             <p className="text-pr font-medium">Parent</p>
-            <p className="text-lg font-semibold py-3">
-              This is the first time my child is studying voluntarily. She
-              actually enjoys watching Janglix and her grades improved as well.
+            <p className="text-sm font-semibold py-3">
+              “C'est la première fois que ma fille étudie sans se faire forcer.
+              Elle aime vraiment regarder Jangflix et ses notes se sont
+              également améliorées.”
             </p>
             <div className="flex items-center gap-1 jc">
               <AiFillStar className="w-6 h-6 text-yellow-500" />
@@ -538,11 +544,14 @@ function Testimonials() {
             </div>
           </div>
           <div className="bg-white p-4 rounded-xl">
-            <h1 className="text-xl font-semibold">John Mark</h1>
-            <p className="text-pr font-medium">Parent</p>
-            <p className="text-lg font-semibold py-3">
-              This is the first time my child is studying voluntarily. She
-              actually enjoys watching Janglix and her grades improved as well.
+            <h1 className="text-xl font-semibold">Abdallah Mbaye</h1>
+            <p className="text-pr font-medium">Professeur d’Histoire</p>
+            <p className="text-sm font-semibold py-3">
+              “Je suis enseignant et j'ai récemment commencé à intégrer Jangflix
+              dans mon programme. Mes élèves ont plus d’assurance dans leur
+              préparation des devoirs avec l’utilisation des QCM intuitifs de la
+              plateforme. Ils adorent Jangflix, c'est nouveau, différent et
+              amusant.”
             </p>
             <div className="flex items-center gap-1 jc">
               <AiFillStar className="w-6 h-6 text-yellow-500" />
@@ -553,11 +562,15 @@ function Testimonials() {
             </div>
           </div>
           <div className="bg-white p-4 rounded-xl">
-            <h1 className="text-xl font-semibold">John Mark</h1>
-            <p className="text-pr font-medium">Parent</p>
-            <p className="text-lg font-semibold py-3">
-              This is the first time my child is studying voluntarily. She
-              actually enjoys watching Janglix and her grades improved as well.
+            <h1 className="text-xl font-semibold">Ousseynou Mbodji</h1>
+            <p className="text-pr font-medium">DRH Yela SARL</p>
+            <p className="text-sm font-semibold py-3">
+              “Dans notre entreprise, nous recherchons toujours des moyens de
+              redonner à la société et croyons que l'éducation est un excellent
+              domaine pour nos efforts sociaux. Non seulement soutenir
+              l'éducation des jeunes étudiants par le biais d'abonnements
+              sponsorisés est une grande cause, mais c'est aussi un
+              investissement dans la future main-d'œuvre de notre pays..”
             </p>
             <div className="flex items-center gap-1 jc">
               <AiFillStar className="w-6 h-6 text-yellow-500" />
@@ -573,25 +586,63 @@ function Testimonials() {
   );
 }
 
-
-
 const FaqSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const faqs = [
     {
-      question: 'What is Jangflix?',
-      answer: 'Jangflix is an innovative and interactive learning platform designed specifically for kids...',
+      question: "Quelles sont les conditions de paiement ?",
+      answer:
+        "Selon le modèle d'abonnement que vous choisissez, vous êtes facturé mensuellement ou annuellement. Pour le forfait mensuel, les frais d'abonnement sont dus chaque premier du mois, pour le forfait annuel, vous payez en une seule fois.",
     },
     {
-      question: 'How can I sign up for Jangflix?',
-      answer: 'Signing up for Jangflix is easy! Simply visit our website and click on the "Sign Up" button...',
+      question: "Quels modes de paiement acceptez-vous?",
+      answer:
+        "Vous pouvez payer votre abonnement par Orange Money, Wave, Free Money, carte de crédit, etc.",
     },
     {
-      question: 'Are there any free courses available?',
-      answer: 'Yes, Jangflix offers a variety of free courses that you can access without any cost...',
+      question: "Comment et quand peut-on résilier un abonnement ?",
+      answer:
+        "Vous pouvez annuler votre abonnement Jangflix à tout moment, et vous continuerez à avoir accès aux différents services jusqu'à la fin de votre période de facturation. Pour annuler, écrivez-nous un court e-mail indiquant que vous souhaitez annuler votre abonnement avec votre numéro de compte.",
     },
-    // Add more FAQs as needed
+    {
+      question: "Le programme sera-t-il mis à jour ?",
+      answer:
+        "Oui, nous mettons constamment à jour et élargissons nos cours et produisons de nouveaux contenu. Vous aurez accès à toutes les mises à jour et extensions dans le niveau de classe auquel vous êtes abonné.",
+    },
+    {
+      question: "Tous les cours sont-ils inclus dans l'abonnement ?",
+      answer:
+        "Tout le contenu de la classe à laquelle vous vous êtes inscrit.e sera à votre disposition. À la fin d'une année scolaire, vous recevrez une notification avec la possibilité de changer de classe.",
+    },
+    {
+      question: "Comment puis-je évaluer les progrès de mon enfant?",
+      answer:
+        "Il y a un portail dédié aux parents pour suivre les progrès de leur enfant. Vous pourrez y voir les heures de connexion, la durée d’apprentissage, les différents devoirs et leurs résultats, ainsi que les commentaires éventuels fournis par un enseignant.",
+    },
+    {
+      question:
+        "Y aura-t-il un certificat pour l’élève après avoir terminé un cours ?",
+      answer:
+        "Vous avez la possibilité de demander un certificat pour l'achèvement d'un cours. Cependant, pour obtenir un certificat, toutes les vidéos doivent être visionnées dans leur intégralité et tous les devoirs effectués. Veuillez noter que le certificat sert uniquement de moyen de motivation et récompense pour l’élève.",
+    },
+    {
+      question: "Y a-t-il des frais supplémentaires aux frais d’abonnement ?",
+      answer:
+        "Non, tous les supports de cours et le contenu de la classe sont inclus dans votre abonnement. Si des fonctionnalités supplémentaires seront introduites à l'avenir, elles seront clairement marquées avec les prix respectifs.",
+    },
+    {
+      question:
+        "Les vidéos peuvent-elles être téléchargées et visionnées hors ligne ?",
+      answer:
+        "Les vidéos seront disponibles en mode hors ligne, afin que les sessions d'étude puissent être préparées en avance sans avoir besoin d'une connexion constante à Internet.",
+    },
+    {
+      question:
+        "Un abonnement peut-il être partagé entre plusieurs élèves d'un même foyer ?",
+      answer:
+        "Afin de pouvoir suivre, traiter et examiner l'activité de chaque élève, un abonnement ne peut être utilisé que par une seule personne.",
+    },
   ];
 
   const toggleAccordion = (index) => {
@@ -603,27 +654,36 @@ const FaqSection = () => {
   };
 
   return (
-  <div className="bg-[#451019]">
-      <div className="max-w-7xl py-24 mx-auto" >
-      <h2 className="text-3xl font-bold mb-8 text-white">Frequently Asked Questions</h2>
-      <div className="space-y-4">
-        {faqs.map((faq, index) => (
-          <div key={index} className="border rounded-md p-4">
-            <button
-              className="flex justify-between items-center w-full focus:outline-none"
-              onClick={() => toggleAccordion(index)}
-            >
-              <span className="font-semibold  text-white">{faq.question}</span>
-              <span>{activeIndex === index ? <AiOutlineMinus className="w-5 h-5 cursor-pointer  text-white"/> : <AiOutlinePlus className="w-5 h-5 cursor-pointer  text-white"/>}</span>
-            </button>
-            {activeIndex === index && (
-              <p className="mt-4  text-white">{faq.answer}</p>
-            )}
-          </div>
-        ))}
+    <div className="bg-[#451019]">
+      <div className="max-w-7xl py-24 mx-auto">
+        <h2 className="text-3xl font-bold mb-8 text-white">
+          Foire aux questions
+        </h2>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div key={index} className="border rounded-md p-4">
+              <button
+                className="flex justify-between items-center w-full focus:outline-none"
+                onClick={() => toggleAccordion(index)}
+              >
+                <span className="font-semibold  text-white">
+                  {faq.question}
+                </span>
+                <span>
+                  {activeIndex === index ? (
+                    <AiOutlineMinus className="w-5 h-5 cursor-pointer  text-white" />
+                  ) : (
+                    <AiOutlinePlus className="w-5 h-5 cursor-pointer  text-white" />
+                  )}
+                </span>
+              </button>
+              {activeIndex === index && (
+                <p className="mt-4  text-white">{faq.answer}</p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
   );
 };
-

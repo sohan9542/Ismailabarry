@@ -5,10 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { RapperContent } from "../App";
 
 const navigation = [
-  { name: "Dashboard", href: "/dashboard" },
-  { name: "Courses", href: "/courses" },
-  { name: "About Us", href: "/about" },
-  { name: "Contact Us", href: "/contact" },
+  { name: "Tableau de bord", href: "/dashboard" },
+  { name: "Programmes", href: "/courses" },
+  { name: "L’équipe Jangflix", href: "/about" },
+  { name: "Contactez-nous", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -70,7 +70,7 @@ const Navbar = () => {
               to="/login"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
-              Log in <span aria-hidden="true">&rarr;</span>
+              S’inscrire <span aria-hidden="true">&rarr;</span>
             </Link>
           ) : (
             <div
@@ -80,7 +80,7 @@ const Navbar = () => {
               }}
               className="text-sm font-semibold leading-6 cursor-pointer text-gray-900"
             >
-              Logout <span aria-hidden="true">&rarr;</span>
+              Se déconnecter <span aria-hidden="true">&rarr;</span>
             </div>
           )}
         </div>

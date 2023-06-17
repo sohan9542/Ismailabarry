@@ -18,7 +18,7 @@ const Login = () => {
           alt="Your Company"
         />
         <h2 className="mt-3 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+      Connectez-vous à votre compte
         </h2>
       </div>
 
@@ -36,7 +36,7 @@ const Login = () => {
               htmlFor="email"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
-              Email address
+              Email
             </label>
             <div className="mt-2">
               <input
@@ -56,7 +56,7 @@ const Login = () => {
                 htmlFor="password"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Password
+                Mot de Passe
               </label>
             </div>
             <div className="mt-2">
@@ -76,15 +76,15 @@ const Login = () => {
               type="submit"
               className="flex w-full justify-center rounded-md bg-pr px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
             >
-              Sign in
+             S'identifier
             </button>
           </div>
         </form>
 
         <p className="mt-10 text-center text-sm text-gray-500">
-          Not a member?{" "}
+        Pas un membre? {' '}
           <Link to="/sign-up" className="font-semibold leading-6 text-pr ">
-            Sign up
+          S'inscrire
           </Link>
         </p>
       </div>

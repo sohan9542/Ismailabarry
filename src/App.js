@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
 import CourseDetails from "./pages/CourseDetails";
+import { videos } from "./assets/demo";
 
 export const RapperContent = createContext();
 const App = () => {
@@ -22,10 +23,12 @@ const App = () => {
   const [user, setUser] = useState(null);
 
 
-
+const [allVideos, setAllVideos] = useState(videos)
 
   const intervalRef = useRef(null); 
 
+
+ const [twatched, setTwatched] = useState(0)
 
   return (
     <RapperContent.Provider
@@ -34,7 +37,11 @@ const App = () => {
         setIsAuthenticated,
         loading,
         user,
-        setUser
+        setUser,
+        allVideos,
+setAllVideos,
+twatched,
+setTwatched
       }}
     >
       <BrowserRouter>
