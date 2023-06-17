@@ -18,7 +18,7 @@ const CourseDetails = () => {
     useContext(RapperContent);
   useEffect(() => {
     let video = allVideos.filter((item) => item?.id === parseInt(id));
-    console.log(allVideos[id - 1]);
+    // console.log(allVideos[id - 1]);
     setVideoObj(video[0]);
   }, [id, allVideos]);
   const breakpoints = {
@@ -49,6 +49,8 @@ const CourseDetails = () => {
             twatched={twatched}
             setTwatched={setTwatched}
             videoObj={videoObj}
+            allVideos={allVideos}
+            setAllVideos={setAllVideos}
           />
         </div>
       </div>
@@ -157,12 +159,13 @@ const CourseDetails = () => {
   );
 };
 
-const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched }) => {
+const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched,allVideos,setAllVideos }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef(null);
   const progressRef = useRef(null);
 
+  const [tProgress, setTProgress] = useState(0)
   const handlePlayClick = () => {
     const video = videoRef.current;
 
@@ -170,8 +173,14 @@ const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched }) => {
       video.play();
       setIsPlaying(true);
     } else {
+      let demoVid = allVideos;
+      demoVid[videoObj?.id - 1].progress = tProgress;
+      // console.log(demoVid)
+      setAllVideos([...demoVid]);
+
       video.pause();
       setIsPlaying(false);
+
     }
   };
 
@@ -182,30 +191,40 @@ const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched }) => {
   const updateProgressBar = () => {
     const video = videoRef.current;
     const progress = (video.currentTime / video.duration) * 100;
+    setTProgress(progress)
     progressRef.current.style.width = `${progress}%`;
   };
 
   useEffect(() => {
     const video = videoRef.current;
 
+
+   
+  
     // Update the video source when the videoObj changes
     video.src = `${videoObj?.videoUrl}#t=5`;
     video.load(); // Load the updated video source
 
+    
     // Pause the video when the videoObj changes
     video.pause();
     setIsPlaying(false);
 
-    // Reset the progress bar
-    progressRef.current.style.width = "0%";
-
-    // Add event listeners
-    video.addEventListener("timeupdate", updateProgressBar);
-
-    // Clean up the event listener on unmount
-    return () => {
-      video.removeEventListener("timeupdate", updateProgressBar);
+    
+    const handleMetadataLoaded = () => {
+      const duration = video.duration;
+      const desiredTime = (parseInt(videoObj?.progress) / 100) * duration;
+      video.currentTime = desiredTime;
     };
+    
+
+    video.addEventListener("loadedmetadata", handleMetadataLoaded);
+
+    return () => {
+      video.removeEventListener("loadedmetadata", handleMetadataLoaded);
+    };
+    // Clean up the event listener on unmount
+
   }, [videoObj]);
 
   return (

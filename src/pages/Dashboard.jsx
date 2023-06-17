@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "swiper/css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import VideoComponent from "../components/VideoComponent";
-import { videos } from "../assets/demo";
+
 import SwiperCore, { Autoplay, Pagination } from 'swiper/core';
+import { RapperContent } from "../App";
 
   SwiperCore.use([Autoplay, Pagination]);
 const Dashboard = () => {
@@ -22,11 +23,11 @@ const Dashboard = () => {
       spaceBetween: 10,
     },
   };
-
+const {allVideos} = useContext(RapperContent)
   return (
     <div className=" min-h-screen pb-20 pt-40 bg-[#451019]">
       <div className="max-w-7xl mx-auto px-2 lg:px-0">
-      {videos?.filter((i)=> i?.progress !== 0).length !== 0 &&  <div className="flex items-center gap-1">
+      {allVideos?.filter((i)=> i?.progress !== 0).length !== 0 &&  <div className="flex items-center gap-1">
         
           <h1 className="py-2 text-2xl font-bold text-white">Recently Watched </h1>
         </div>}
@@ -40,7 +41,7 @@ const Dashboard = () => {
           }}
           className="mySwiper"
         >
-          {videos?.filter((i)=> i?.progress !== 0).map((item, ind) => (
+          {allVideos?.filter((i)=> i?.progress !== 0).map((item, ind) => (
             <SwiperSlide key={ind}>
               <VideoComponent item={item} />
             </SwiperSlide>
@@ -61,7 +62,7 @@ const Dashboard = () => {
           }}
           className="mySwiper"
         >
-          {videos?.filter((i)=> i?.category === 'Histoire').map((item, ind) => (
+          {allVideos?.filter((i)=> i?.category === 'Histoire').map((item, ind) => (
             <SwiperSlide key={ind}>
               <VideoComponent item={item} />
             </SwiperSlide>
@@ -82,7 +83,7 @@ const Dashboard = () => {
           }}
           className="mySwiper"
         >
-          {videos?.filter((i)=> i?.category === 'Philosophie').map((item, ind) => (
+          {allVideos?.filter((i)=> i?.category === 'Philosophie').map((item, ind) => (
             <SwiperSlide key={ind}>
               <VideoComponent item={item} />
             </SwiperSlide>
@@ -103,7 +104,7 @@ const Dashboard = () => {
           }}
           className="mySwiper"
         >
-          {videos?.filter((i)=> i?.category === 'Sciences').map((item, ind) => (
+          {allVideos?.filter((i)=> i?.category === 'Sciences').map((item, ind) => (
             <SwiperSlide key={ind}>
               <VideoComponent item={item} />
             </SwiperSlide>
@@ -125,7 +126,7 @@ const Dashboard = () => {
           }}
           className="mySwiper"
         >
-          {videos?.filter((i)=> i?.category === 'Anglais').map((item, ind) => (
+          {allVideos?.filter((i)=> i?.category === 'Anglais').map((item, ind) => (
             <SwiperSlide key={ind}>
               <VideoComponent item={item} />
             </SwiperSlide>
