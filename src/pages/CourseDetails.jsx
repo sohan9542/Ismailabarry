@@ -17,6 +17,7 @@ const CourseDetails = () => {
   const { allVideos, setAllVideos, twatched, setTwatched } =
     useContext(RapperContent);
   useEffect(() => {
+    window.scrollTo(0,0)
     let video = allVideos.filter((item) => item?.id === parseInt(id));
     // console.log(allVideos[id - 1]);
     setVideoObj(video[0]);
@@ -195,46 +196,60 @@ const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched,allVideos,set
     progressRef.current.style.width = `${progress}%`;
   };
 
-  useEffect(() => {
-    const video = videoRef.current;
+  // useEffect(() => {
+  //   const video = videoRef.current;
 
 
    
   
-    // Update the video source when the videoObj changes
-    video.src = `${videoObj?.videoUrl}#t=5`;
-    video.load(); // Load the updated video source
+  //   // // Update the video source when the videoObj changes
+  //   // video.src = `${videoObj?.videoUrl}#t=5`;
+  //   // video.load(); // Load the updated video source
 
     
-    // Pause the video when the videoObj changes
-    video.pause();
-    setIsPlaying(false);
+  //   // // Pause the video when the videoObj changes
+  //   // video.pause();
+  //   // setIsPlaying(false);
 
     
-    const handleMetadataLoaded = () => {
-      const duration = video.duration;
-      const desiredTime = (parseInt(videoObj?.progress) / 100) * duration;
-      video.currentTime = desiredTime;
-    };
+  //   const handleMetadataLoaded = () => {
+  //     const duration = video.duration;
+  //     const desiredTime = (parseInt(videoObj?.progress) / 100) * duration;
+  //     video.currentTime = desiredTime;
+  //   };
     
 
-    video.addEventListener("loadedmetadata", handleMetadataLoaded);
+  //   video.addEventListener("loadedmetadata", handleMetadataLoaded);
 
-    return () => {
-      video.removeEventListener("loadedmetadata", handleMetadataLoaded);
-    };
-    // Clean up the event listener on unmount
+  //   return () => {
+  //     video.removeEventListener("loadedmetadata", handleMetadataLoaded);
+  //   };
+  //   // Clean up the event listener on unmount
 
-  }, [videoObj]);
+  // }, [videoObj]);
 
   return (
     <div
-      className="relative w-full h-auto lg:h-[500px] rounded-xl overflow-hidden"
+      className="relative w-full h-auto lg:h-[500px] border rounded-xl overflow-hidden"
       onMouseEnter={handleVideoHover}
       onMouseLeave={handleVideoHover}
     >
-      <video
-        ref={videoRef}
+    {videoObj &&    <iframe
+    
+        src={`${videoObj?.videoUrl}`}
+        width="100%"
+        height="100%"
+        
+        className="w-full h-full object-fill  rounded-lg  custom-video-controls"
+        allowFullScreen={false}
+      
+      
+      />}
+           <div style={{ width: "80px", height: "80px" }} className="top-0 right-0 z-50 absolute">
+      
+      </div>
+      {/* <video
+       
         controls
         onEnded={() => {
           setTwatched(twatched + 1);
@@ -242,29 +257,29 @@ const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched,allVideos,set
         }}
         disablePictureInPicture
         controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
-        className="w-full h-full object-fill rounded-lg  custom-video-controls"
+     
         onClick={handlePlayClick}
         onTimeUpdate={isPlaying ? updateProgressBar : null}
       >
-        <source src={`${videoObj?.videoUrl}#t=5`} type="video/mp4" />
+        <source src={`${videoObj?.videoUrl}`} type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
-      {!isPlaying && (
+      </video> */}
+      {/* {!isPlaying && (
         <button
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl focus:outline-none"
-          onClick={handlePlayClick}
+          // onClick={handlePlayClick}
         >
           <FaPlay />
         </button>
-      )}
-      {isHovered && isPlaying && (
+      )} */}
+      {/* {isHovered && isPlaying && (
         <button
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl focus:outline-none"
-          onClick={handlePlayClick}
+          // onClick={handlePlayClick}
         >
           <FaPause />
         </button>
-      )}
+      )} */}
       <div className="absolute bottom-0 left-0 w-full h-2 ">
         <div
           ref={progressRef}

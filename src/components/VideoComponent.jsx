@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
-import { FaPlay, FaPause } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef } from "react";
+import { FaPlay, FaPause } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const VideoComponent = ({ item }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -24,34 +24,44 @@ const VideoComponent = ({ item }) => {
   };
 
   return (
-    <Link to={"/video/"+ item?.id} className="relative w-full h-52 rounded-xl overflow-hidden" onMouseEnter={handleVideoHover} onMouseLeave={handleVideoHover}>
-      <video
+    <div
+      className="relative w-full h-52 rounded-xl  overflow-hidden"
+      onMouseEnter={handleVideoHover}
+      onMouseLeave={handleVideoHover}
+    >
+      {/* <video
         ref={videoRef}
+        src={`${item?.videoUrl}`}
         className="w-full h-full object-cover  rounded-lg"
         controls={false}
-      
       >
-        <source src={`${item?.videoUrl}#t=5`} type="video/mp4" />
+        <source type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
-      {(isHovered) && (
-        <button
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl focus:outline-none"
-      
-        >
-          <FaPlay />
-        </button>
+      </video> */}
+
+      <iframe
+        src={`${item?.videoUrl}`}
+        width="100%"
+        height="100%"
+        allowFullScreen={false}
+        style={{ border: "none" }}
+      />
+
+      <Link
+        to={"/video/" + item?.id}
+        className="absolute top-0 left-0 w-full h-full z-50"
+      ></Link>
+ 
+
+      {item?.progress && (
+        <div className="absolute bottom-0 left-0 w-full h-2 ">
+          <div
+            className="h-full bg-pr"
+            style={{ width: `${item?.progress}%` }}
+          ></div>
+        </div>
       )}
-
-{item?.progress &&  <div className="absolute bottom-0 left-0 w-full h-2 ">
-        <div
-         
-          className="h-full bg-pr"
-          style={{ width: `${item?.progress}%` }}
-        ></div>
-      </div>}
-
-    </Link>
+    </div>
   );
 };
 
