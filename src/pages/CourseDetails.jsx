@@ -41,9 +41,9 @@ const CourseDetails = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen pt-32 pb-20 ">
+    <div className="min-h-screen  pt-32 pb-20 ">
       <Discover open={open} setOpen={setOpen} />
-      <div className="bg-white w-full">
+      <div className="bg-white w-full px-3 lg:px-0">
         <div className="max-w-7xl px-2 lg:px-0 mx-auto">
           <BigScreenVideo
             setOpen={setOpen}
@@ -55,7 +55,7 @@ const CourseDetails = () => {
           />
         </div>
       </div>
-      <div className="bg-[#451019] mt-10 ">
+      <div className="bg-[#451019] mt-10 px-3 lg:px-0">
         <div className="py-20 max-w-7xl mx-auto  ">
           <p className="text-white"> {videoObj?.subject}</p>
           <h1 className="text-2xl font-semibold text-white">
@@ -64,7 +64,7 @@ const CourseDetails = () => {
           <p className=" text-white text-sm pt-1">{videoObj?.description}</p>
         </div>
       </div>
-      <div className=" max-w-7xl mx-auto pb-10 ">
+      <div className=" max-w-7xl mx-auto pb-10 px-3 lg:px-0">
         <h1 className="text-center text-4xl pt-20 pb-10 font-bold ">
           Testez Vos Connaissances🚀
         </h1>
@@ -77,7 +77,7 @@ const CourseDetails = () => {
           />
         )}
       </div>
-      <div className="bg-[#451019] mt-10 ">
+      <div className="bg-[#451019] mt-10 px-3 lg:px-0">
         <div className=" max-w-7xl mx-auto pb-20">
           <h1 className="text-center text-4xl pt-20 pb-10 font-bold text-white">
             La communauté ❓
@@ -86,7 +86,7 @@ const CourseDetails = () => {
         </div>
       </div>
 
-      <div className="mt-20 py-20 max-w-7xl mx-auto">
+      <div className="mt-20 py-20 max-w-7xl mx-auto px-3 lg:px-0">
         <h1 className="text-center text-4xl text-pr  pb-32 font-bold ">
           Ma Progression⭐
         </h1>
@@ -112,7 +112,7 @@ const CourseDetails = () => {
         </h1>
       </div>
 
-      <div className="w-full bg-[#451019] py-10">
+      <div className="w-full bg-[#451019] py-10 px-3 lg:px-0">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-1 mt-10">
             <p className="text-gray-50">Suggestion{">"} </p>
@@ -140,7 +140,7 @@ const CourseDetails = () => {
         </div>
       </div>
 
-      <div className=" mt-10 ">
+      <div className=" mt-10 px-3 lg:px-0">
         <div className=" max-w-7xl mx-auto pb-20">
           <h1 className="text-center text-4xl pt-20 pb-10 font-bold text-pr">
             NOTE
@@ -148,7 +148,7 @@ const CourseDetails = () => {
           <Note />
         </div>
       </div>
-      <div className="flex items-center justify-center w-full mt-40 mb-20">
+      <div className="flex items-center justify-center w-full mt-40 mb-20 px-3 lg:px-0">
         <Link
           to="/courses"
           className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
@@ -240,7 +240,7 @@ const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched,allVideos,set
         width="100%"
         height="100%"
         
-        className="w-full h-full object-fill  rounded-lg  custom-video-controls"
+        className="w-full h-60 lg:h-full object-fill  rounded-lg  custom-video-controls"
         allowFullScreen={false}
       
       
