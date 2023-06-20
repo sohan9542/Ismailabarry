@@ -28,7 +28,7 @@ const Login = () => {
           onSubmit={(e) => {
             e.preventDefault();
             setIsAuthenticated(true)
-            navigate("/dashboard");
+            navigate("/courses");
           }}
         >
           <div>

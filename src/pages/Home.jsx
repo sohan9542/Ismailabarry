@@ -427,10 +427,10 @@ function Pricing() {
 
 function Trusted() {
   return (
-    <div className="bg-white pt-24 pb-32">
+    <div className="bg-white pt-6 pb-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
-          Trusted by the world’s most innovative teams
+        Nos Partenaires et Collaborateurs
         </h2>
       <div className="flex items-center justify-center">
       <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center  gap-x-8 gap-y-10  lg:grid-cols-3 ">
@@ -654,7 +654,7 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="bg-[#451019]">
+    <div className="bg-[#451019] px-3 lg:px-0">
       <div className="max-w-7xl py-24 mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-white">
           Foire aux questions
@@ -666,7 +666,7 @@ const FaqSection = () => {
                 className="flex justify-between items-center w-full focus:outline-none"
                 onClick={() => toggleAccordion(index)}
               >
-                <span className="font-semibold  text-white">
+                <span className="font-semibold  text-white text-left">
                   {faq.question}
                 </span>
                 <span>

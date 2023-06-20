@@ -148,7 +148,7 @@ export let question4  = [
   {
     question: "Quelle datation consiste à donner un âge approximatif ?",
     options: [
-      "Datation Relative (Yes)",
+      "Datation Relative ",
       "Datation Absolue",
       "En combien"
     ],
@@ -160,7 +160,7 @@ export let question4  = [
       "Le Précambrien",
       "L’Ère Tertiaire",
       "L’Ère Primaire",
-      "L’Ère Quaternaire (Yes)",
+      "L’Ère Quaternaire ",
       "L’Ère Secondaire"
     ],
     answerIndex: 3
@@ -171,7 +171,7 @@ export let question4  = [
       "Le Précambrien",
       "L’Ère Tertiaire",
       "L’Ère Primaire",
-      "L’Ère Quaternaire (Yes)",
+      "L’Ère Quaternaire ",
       "L’Ère Secondaire"
     ],
     answerIndex: 3
@@ -180,7 +180,7 @@ export let question4  = [
     question: "Où a été découvert l’Australopithèque ?",
     options: [
       "Les Pyrénées",
-      "La Tanzanie (Yes)",
+      "La Tanzanie ",
       "Les Alpes"
     ],
     answerIndex: 1
@@ -190,7 +190,7 @@ export let question4  = [
     options: [
       "Le Précambrien",
       "À la fin de L’Ère Tertiaire",
-      "À la fin de L’Ère Primaire (Yes)",
+      "À la fin de L’Ère Primaire ",
       "À la fin de L’Ère Quaternaire",
       "À la fin de L’Ère Secondaire"
     ],
@@ -202,7 +202,7 @@ export let question4  = [
       "46 milliards d’années",
       "4,6 millions d’années",
       "460 millions d’années",
-      "4,6 milliards d’années (Yes)"
+      "4,6 milliards d’années "
     ],
     answerIndex: 3
   }
@@ -210,27 +210,27 @@ export let question4  = [
 export let question5  = [
   {
     question: "Quand est-ce que s’est tenue la conférence de Berlin ?",
-    options: ["1985", "1885 (Yes)", "1785", "1858"],
+    options: ["1985", "1885 ", "1785", "1858"],
     answerIndex: 1
   },
   {
     question: "Quels étaient les 2 principaux rivaux pour la possession du Congo ?",
-    options: ["Français et Portugais", "Portugais et Belges", "Français et Belges (Yes)"],
+    options: ["Français et Portugais", "Portugais et Belges", "Français et Belges "],
     answerIndex: 2
   },
   {
     question: "Quelle a été la dernière puissance à s’intéresser à la colonisation ?",
-    options: ["Allemagne (Yes)", "France", "Belgique", "Portugal"],
+    options: ["Allemagne ", "France", "Belgique", "Portugal"],
     answerIndex: 0
   },
   {
     question: "Qui a convoqué la conférence de Berlin ?",
-    options: ["Le Général Charles de Gaulle", "Le Chancelier Bismarck (Yes)", "Le Roi Léopold II"],
+    options: ["Le Général Charles de Gaulle", "Le Chancelier Bismarck ", "Le Roi Léopold II"],
     answerIndex: 1
   },
   {
     question: "Où s’est tenue la conférence de Berlin ?",
-    options: ["En France", "En Allemagne (Yes)", "En Belgique", "Au Portugal"],
+    options: ["En France", "En Allemagne ", "En Belgique", "Au Portugal"],
     answerIndex: 1
   }
 ]

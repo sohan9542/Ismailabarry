@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { RapperContent } from "../App";
 
 const navigation = [
-  { name: "Tableau de bord", href: "/dashboard" },
   { name: "Programmes", href: "/courses" },
   { name: "L’équipe Jangflix", href: "/about" },
   { name: "Contactez-nous", href: "/contact" },

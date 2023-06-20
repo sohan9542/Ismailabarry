@@ -48,7 +48,7 @@ const {allVideos} = useContext(RapperContent)
           ))}
         </Swiper>
         <div className="flex items-center gap-1 mt-10">
-          <p className="text-gray-50">Nouvelle {">"} </p>
+        
           <h1 className="py-2 text-2xl font-bold text-white">Histoire</h1>
         </div>
         <Swiper
@@ -69,7 +69,7 @@ const {allVideos} = useContext(RapperContent)
           ))}
         </Swiper>
         <div className="flex items-center gap-1 mt-10">
-          <p className="text-gray-50">Incroyable {">"} </p>
+       
           <h1 className="py-2 text-2xl font-bold text-white">Philosophie</h1>
         </div>
         <Swiper
@@ -90,7 +90,7 @@ const {allVideos} = useContext(RapperContent)
           ))}
         </Swiper>
         <div className="flex items-center gap-1 mt-10">
-          <p className="text-gray-50">Troisième {">"} </p>
+      
           <h1 className="py-2 text-2xl font-bold text-white">Sciences</h1>
         </div>
         <Swiper
@@ -112,7 +112,7 @@ const {allVideos} = useContext(RapperContent)
         </Swiper>
   
         <div className="flex items-center gap-1 mt-10">
-          <p className="text-gray-50">Troisième {">"} </p>
+       
           <h1 className="py-2 text-2xl font-bold text-white">Anglais</h1>
         </div>
         <Swiper

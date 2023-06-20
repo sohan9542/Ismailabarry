@@ -77,6 +77,14 @@ const CourseDetails = () => {
           />
         )}
       </div>
+      <div className=" mt-10 px-3 lg:px-0">
+        <div className=" max-w-7xl mx-auto pb-20">
+          <h1 className="text-center text-4xl pt-20 pb-10 font-bold text-pr">
+            NOTE
+          </h1>
+          <Note />
+        </div>
+      </div>
       <div className="bg-[#451019] mt-10 px-3 lg:px-0">
         <div className=" max-w-7xl mx-auto pb-20">
           <h1 className="text-center text-4xl pt-20 pb-10 font-bold text-white">
@@ -87,7 +95,7 @@ const CourseDetails = () => {
       </div>
 
       <div className="mt-20 py-20 max-w-7xl mx-auto px-3 lg:px-0">
-        <h1 className="text-center text-4xl text-pr  pb-32 font-bold ">
+        <h1 className="text-center text-4xl text-pr  pb-20 font-bold ">
           Ma Progression⭐
         </h1>
         <div className=" flex flex-col lg:flex-row gap-10 lg:gap-32 mt-10 items-center justify-center">
@@ -124,7 +132,7 @@ const CourseDetails = () => {
             breakpoints={breakpoints}
             // autoplay={{ delay: 1000, disableOnInteraction: false }}
 
-            slidesPerView={4}
+            slidesPerView={3}
             spaceBetween={10}
             pagination={{ clickable: true }}
             className="mySwiper"
@@ -140,20 +148,13 @@ const CourseDetails = () => {
         </div>
       </div>
 
-      <div className=" mt-10 px-3 lg:px-0">
-        <div className=" max-w-7xl mx-auto pb-20">
-          <h1 className="text-center text-4xl pt-20 pb-10 font-bold text-pr">
-            NOTE
-          </h1>
-          <Note />
-        </div>
-      </div>
-      <div className="flex items-center justify-center w-full mt-40 mb-20 px-3 lg:px-0">
+  
+      <div className="flex items-center justify-center w-full mt-40 mb-10 px-3 lg:px-0">
         <Link
           to="/courses"
           className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
         >
-          Back to Course Page
+       Retour à la médiathèque
         </Link>
       </div>
     </div>
@@ -239,7 +240,10 @@ const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched,allVideos,set
         src={`${videoObj?.videoUrl}`}
         width="100%"
         height="100%"
-        
+        onEnded={() => {
+          setTwatched(twatched + 1);
+          setOpen(true);
+        }}
         className="w-full h-60 lg:h-full object-fill  rounded-lg  custom-video-controls"
         allowFullScreen={false}
       
@@ -251,10 +255,7 @@ const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched,allVideos,set
       {/* <video
        
         controls
-        onEnded={() => {
-          setTwatched(twatched + 1);
-          setOpen(true);
-        }}
+       
         disablePictureInPicture
         controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
      
@@ -461,13 +462,13 @@ const ExamSection = ({ questions, setAllVideos, allVideos, id }) => {
               type="button"
               className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
             >
-              Previous
+              Précédente
             </button>
             <button
               type="submit"
               className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
             >
-              Next
+              Suivante
             </button>
           </div>
         )}
@@ -585,15 +586,10 @@ const Note = () => {
     setQuestion("");
   };
 
-  const toggleAnswer = (index) => {
-    const updatedQuestionsList = [...questionsList];
-    updatedQuestionsList[index].showAnswer =
-      !updatedQuestionsList[index].showAnswer;
-    setQuestionsList(updatedQuestionsList);
-  };
+
 
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 mx-auto mt-8">
+    <div className="w-full grid grid-cols-1  gap-10 mx-auto mt-8">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="question" className="font-bold text-pr pb-3">
@@ -611,7 +607,7 @@ const Note = () => {
           Ajouter +
         </button>
       </form>
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <h2 className="text-xl font-bold text-pr">Remarques enregistrées 🤔</h2>
         {questionsList.map((q, index) => (
           <div
@@ -638,7 +634,7 @@ const Note = () => {
             )}
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
