@@ -65,7 +65,7 @@ const CourseDetails = () => {
         </div>
       </div>
       <div className=" max-w-7xl mx-auto pb-10 px-3 lg:px-0">
-        <h1 className="text-center text-4xl pt-20 pb-10 font-bold ">
+        <h1 className="text-center text-2xl lg:text-4xl pt-20 pb-10 font-bold ">
           Testez Vos Connaissances🚀
         </h1>
         {videoObj?.questions && (
@@ -80,7 +80,7 @@ const CourseDetails = () => {
       </div>
       <div className=" mt-10 px-3 lg:px-0">
         <div className=" max-w-7xl mx-auto pb-20">
-          <h1 className="text-center text-4xl pt-20 pb-10 font-bold text-pr">
+          <h1 className="text-center text-2xl lg:text-4xl pt-20 pb-10 font-bold text-pr">
             NOTE
           </h1>
           <Note />
@@ -88,7 +88,7 @@ const CourseDetails = () => {
       </div>
       <div className="bg-[#451019] mt-10 px-3 lg:px-0">
         <div className=" max-w-7xl mx-auto pb-20">
-          <h1 className="text-center text-4xl pt-20 pb-10 font-bold text-white">
+          <h1 className="text-center text-2xl lg:text-4xl pt-20 pb-10 font-bold text-white">
             La communauté ❓
           </h1>
           <AskQuestionSection />
@@ -116,7 +116,7 @@ const CourseDetails = () => {
             </p>
           </div>
         </div>
-        <h1 className="text-center text-4xl pt-32 font-bold text-pr ">
+        <h1 className="text-center text-xl lg:text-4xl pt-32 font-bold text-pr ">
           Vous êtes sur une bonne lancée, maintenez ce rythme !🎉
         </h1>
       </div>
