@@ -41,7 +41,7 @@ const CourseDetails = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen  pt-32 pb-20 ">
+    <div className="min-h-screen   pt-32 pb-20 ">
       <Discover open={open} setOpen={setOpen} />
       <div className="bg-white w-full px-3 lg:px-0">
         <div className="max-w-7xl px-2 lg:px-0 mx-auto">
@@ -452,7 +452,7 @@ const ExamSection = ({ questions, setAllVideos, allVideos, id,setOpen }) => {
         ))}
 
 {questionDone >= questions?.length && (
-              <h1 className="text-center whitespace-nowrap text-4xl py-10 font-bold text-pr ">
+              <h1 className="text-center lg:whitespace-nowrap text-xl lg:text-4xl py-10 font-bold text-pr ">
                 tu as donné {rightAnswer} bonnes réponses sur{" "}
                 {questions?.length}!🎉
               </h1>
