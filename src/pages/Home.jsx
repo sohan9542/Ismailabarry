@@ -3,7 +3,7 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 import { CalendarDaysIcon, HandRaisedIcon } from "@heroicons/react/24/outline";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   AiFillVideoCamera,
   AiOutlineFilePdf,
@@ -14,8 +14,11 @@ import {
 } from "react-icons/ai";
 import { BsFillChatDotsFill } from "react-icons/bs";
 import { IoMdSchool } from "react-icons/io";
+import { RapperContent } from "../App";
+import VideoComponent from "../components/VideoComponent";
 
-export default function Home() {
+ function Home() {
+ 
   return (
     <div className="bg-white">
       <div className="relative  isolate px-6 pt-14 lg:px-8">
@@ -66,7 +69,7 @@ export default function Home() {
     </div>
   );
 }
-
+export default Home
 /*
   This example requires some changes to your config:
   
@@ -134,45 +137,50 @@ const callouts2 = [
 ];
 
 function Courses() {
+  const { allVideos } = useContext(RapperContent);
   return (
     <div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl py-16  lg:max-w-none ">
-          <h2 className="text-4xl font-bold text-gray-900 text-center">
-            Médiathièque
-          </h2>
+      <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-20">
+            <h2 className="text-4xl font-bold text-center text-gray-900 pb-10">
+              Médiathèque{" "}
+            </h2>
 
-          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-10 lg:space-y-0">
-            {callouts.map((callout) => (
-              <div key={callout.name} className="group relative">
-                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
-                  <img
-                    src={callout.imageSrc}
-                    alt={callout.imageAlt}
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-                <h3 className="mt-6 text-xs text-gray-500">
-                  <a href={callout.href}>
-                    <span className="absolute inset-0" />
-                    {callout.name}
-                  </a>
-                </h3>
-                <p className="text-xl font-bold text-gray-900">
-                  {callout.description}
-                </p>
+            <div className=" p-5  bg-[#451019] w-full  rounded-xl">
+            <h2 className="text-3xl font-bold  text-white  ">
+            Troisième
+            </h2>
+              <div className=" grid lg:grid-cols-3 mt-5 lg:gap-x-6 gap-y-9 ">
+                {allVideos
+                  ?.filter((i) => i?.grade === "Troisième")
+                  .map((item, ind) => (
+                   <div>
+                     <VideoComponent item={item} />
+                     <p className="text-white pt-2 font-bold text-lg">{item?.title}</p>
+                     <p className="text-white pt-1 font-bold text-sm">{item?.subject}</p>
+                   </div>
+                  ))}
               </div>
-            ))}
+            </div>
+            <div className=" p-5 mt-10  bg-[#451019] w-full  rounded-xl">
+            <h2 className="text-3xl font-bold  text-white  ">
+            Terminale
+            </h2>
+              <div className=" grid lg:grid-cols-3 mt-5 lg:gap-x-6 gap-y-9 ">
+                {allVideos
+                  ?.filter((i) => i?.grade === "Terminale")
+                  .map((item, ind) => (
+                   <div>
+                     <VideoComponent item={item} />
+                     <p className="text-white pt-2 font-bold text-lg">{item?.title}</p>
+                     <p className="text-white pt-1 font-bold text-sm">{item?.subject}</p>
+                   </div>
+                  ))}
+              </div>
+            </div>
+
+     
           </div>
-          <div className="flex items-center justify-center mt-16">
-            <Link
-              to="/courses"
-              className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
-            >
-              Voir plus
-            </Link>
-          </div>
-        </div>
       </div>
     </div>
   );

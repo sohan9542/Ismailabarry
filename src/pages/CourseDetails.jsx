@@ -17,7 +17,7 @@ const CourseDetails = () => {
   const { allVideos, setAllVideos, twatched, setTwatched } =
     useContext(RapperContent);
   useEffect(() => {
-    window.scrollTo(0,0)
+    setTwatched(twatched + 1)
     let video = allVideos.filter((item) => item?.id === parseInt(id));
     // console.log(allVideos[id - 1]);
     setVideoObj(video[0]);
@@ -32,7 +32,7 @@ const CourseDetails = () => {
       spaceBetween: 10,
     },
     1024: {
-      slidesPerView: 4,
+      slidesPerView: 3,
       spaceBetween: 10,
     },
   };
@@ -70,6 +70,7 @@ const CourseDetails = () => {
         </h1>
         {videoObj?.questions && (
           <ExamSection
+          setOpen={setOpen}
             questions={videoObj?.questions}
             setAllVideos={setAllVideos}
             allVideos={allVideos}
@@ -240,10 +241,9 @@ const BigScreenVideo = ({ videoObj, setOpen, setTwatched, twatched,allVideos,set
         src={`${videoObj?.videoUrl}`}
         width="100%"
         height="100%"
-        onEnded={() => {
-          setTwatched(twatched + 1);
-          setOpen(true);
-        }}
+      //  onEndedCapture={}
+       
+     
         className="w-full h-60 lg:h-full object-fill  rounded-lg  custom-video-controls"
         allowFullScreen={false}
       
@@ -334,7 +334,7 @@ const CircularProgress = ({ progress }) => {
   );
 };
 
-const ExamSection = ({ questions, setAllVideos, allVideos, id }) => {
+const ExamSection = ({ questions, setAllVideos, allVideos, id,setOpen }) => {
   const [answers, setAnswers] = useState([]);
 
   const handleAnswerChange = (questionIndex, answerIndex) => {
@@ -401,6 +401,12 @@ const ExamSection = ({ questions, setAllVideos, allVideos, id }) => {
     //  set
   };
 
+  useEffect(() => {
+    if(questionDone >= questions?.length){
+      setOpen(true)
+    }
+  }, [questionDone])
+  
   return (
     <div className=" max-w-2xl mx-auto mt-8 ">
       <form
