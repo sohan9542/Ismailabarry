@@ -3,37 +3,37 @@ const people = [
     name: "Ismaila Barry",
     role: "Fondateur & CEO",
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "/DXT41219.jpg",
   },
   {
     name: "Amadou Sy",
     role: "Chargé des programmes",
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "/Amadou Sy.jpeg",
   },
   {
     name: "Abdallah Mbaye",
     role: "Professeur d’Histoire",
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "/Abdallah Mbaye.png",
   },
   {
     name: "Adja Ndiaye",
     role: "Professeur de SVT",
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "/Adja Ndiaye.jpeg",
   },
   {
     name: "Médinatou Diop",
     role: "Professeur d’Anglais",
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "/Medinatou.jpeg",
   },
   {
-    name: "Robert Sèn",
+    name: "Robert Sene",
     role: "Professeur de Philosophie",
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      "/Robert Sene.jpeg",
   },
   // More people...
 ];
@@ -50,10 +50,7 @@ export default function About() {
             <span className="text-pr font-bold">« L'éducation est l'arme la plus puissante que l'on puisse utiliser
             pour changer le monde » –</span> Nelson Mandela.
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-         <span className="text-pr font-bold"> »</span> Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae
-            elementum enim vitae ullamcorper suspendisse.
-          </p>
+        
           <p className="mt-6 text-lg leading-8 text-gray-600">
           <span className="text-pr font-bold"> »</span> Jangflix est une plateforme de streaming de contenus éducatifs de
             haute qualité dans le but de doter le plus d'étudiants possible d'un
@@ -72,7 +69,7 @@ export default function About() {
           {people.map((person) => (
             <li key={person.name}>
               <div className="flex items-center gap-x-6">
-              
+              <img src={person.imageUrl} className="w-20 h-20 object-cover rounded-full" alt="" />
                 <div>
                   <h3 className="text-base font-bold leading-7 tracking-tight text-gray-900">
                     {person.name}
