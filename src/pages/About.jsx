@@ -6,7 +6,7 @@ const people = [
       "/DXT41219.jpg",
   },
   {
-    name: "Amadou Sy -&gt; Bocar Sene",
+    name: "Bocar Sene",
     role: "Chargé des programmes",
     imageUrl:
       "/Amadou Sy.jpeg",
@@ -18,19 +18,19 @@ const people = [
       "/Abdallah Mbaye.png",
   },
   {
-    name: "Adja Ndiaye -&gt; Celestine Gomis",
+    name: "Celestine Gomis",
     role: "Professeur de SVT",
     imageUrl:
       "/Adja Ndiaye.jpeg",
   },
   {
-    name: "Medinatou Diop -&gt; Fatou Seck",
+    name: "Fatou Seck",
     role: "Professeur d’Anglais",
     imageUrl:
       "/Medinatou.jpeg",
   },
   {
-    name: "Robert Sene -&gt; Benjamin Aw",
+    name: "Benjamin Aw",
     role: "Professeur de Philosophie",
     imageUrl:
       "/Robert Sene.jpeg",
