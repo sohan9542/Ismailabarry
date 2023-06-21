@@ -36,7 +36,72 @@ export default function Discover({open, setOpen}) {
             <div className="bg-white px-4 pb-4 pt-5 ">
                 <div className="sm:flex sm:items-start">
                   <div className="mt-3 ">
-                    <p className=" text-sm text-pr font-bold">
+                  <p className=" text-sm mt-3 text-pr font-bold">
+                  Quel est votre niveau ?
+                    </p>
+                    <form>
+                      <div className="flex items-center gap-3">
+                        {["Troisième", "Terminale"].map((option, optionIndex) => (
+                          <label
+                            key={optionIndex}
+                            className="flex items-center justify-between px-4 rounded-md cursor-pointer hover:bg-hvr py-2 mt-3 space-x-2 border"
+                          >
+                            <span className="text-sm">{option}</span>
+                            <input
+                              value={option}
+                              type="radio"
+                              name="radioGroup" // Add a unique name attribute
+                              className="w-4 h-4"
+                            />
+                          </label>
+                        ))}
+                      </div>
+                    </form>
+                    <p className=" mt-3 text-sm text-pr font-bold">
+                    Vous êtes de quelle région?
+                    </p>
+                    <textarea
+                      className="border outline-none w-full p-2 mt-2"
+                      name=""
+                      id=""
+                      cols="30"
+                      rows="3"
+                    ></textarea>
+
+
+     <p className=" text-sm mt-3 text-pr font-bold">
+                     Vous êtes dans quel type d’établissement?
+                    </p>
+                    <form>
+                      <div className="flex items-center gap-3">
+                        {["Privé", "Publique"].map((option, optionIndex) => (
+                          <label
+                            key={optionIndex}
+                            className="flex items-center justify-between px-4 rounded-md cursor-pointer hover:bg-hvr py-2 mt-3 space-x-2 border"
+                          >
+                            <span className="text-sm">{option}</span>
+                            <input
+                              value={option}
+                              type="radio"
+                              name="radioGroup" // Add a unique name attribute
+                              className="w-4 h-4"
+                            />
+                          </label>
+                        ))}
+                      </div>
+                    </form>
+
+                    <p className=" mt-3 text-sm text-pr font-bold">
+                    Le nom de votre établissement :
+                    </p>
+                    <textarea
+                      className="border outline-none w-full p-2 mt-2"
+                      name=""
+                      id=""
+                      cols="30"
+                      rows="3"
+                    ></textarea>
+                    <p className=" mt-3 text-sm text-pr font-bold">
                       Que pensez-vous du format des cours ?
                     </p>
                     <textarea
@@ -53,7 +118,7 @@ export default function Discover({open, setOpen}) {
                     </p>
                     <form>
                       <div className="flex items-center gap-3">
-                        {["Yes", "No"].map((option, optionIndex) => (
+                        {["Oui", "Non"].map((option, optionIndex) => (
                           <label
                             key={optionIndex}
                             className="flex items-center justify-between px-4 rounded-md cursor-pointer hover:bg-hvr py-2 mt-3 space-x-2 border"
@@ -106,7 +171,7 @@ export default function Discover({open, setOpen}) {
                     </p>
                     <form>
                       <div className="flex items-center gap-3">
-                        {["Yes", "No"].map((option, optionIndex) => (
+                        {["Oui ", "Non"].map((option, optionIndex) => (
                           <label
                             key={optionIndex}
                             className="flex items-center justify-between px-4 rounded-md cursor-pointer hover:bg-hvr py-2 mt-3 space-x-2 border"

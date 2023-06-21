@@ -6,7 +6,7 @@ const people = [
       "/DXT41219.jpg",
   },
   {
-    name: "Amadou Sy",
+    name: "Amadou Sy -&gt; Bocar Sene",
     role: "Chargé des programmes",
     imageUrl:
       "/Amadou Sy.jpeg",
@@ -18,19 +18,19 @@ const people = [
       "/Abdallah Mbaye.png",
   },
   {
-    name: "Adja Ndiaye",
+    name: "Adja Ndiaye -&gt; Celestine Gomis",
     role: "Professeur de SVT",
     imageUrl:
       "/Adja Ndiaye.jpeg",
   },
   {
-    name: "Médinatou Diop",
+    name: "Medinatou Diop -&gt; Fatou Seck",
     role: "Professeur d’Anglais",
     imageUrl:
       "/Medinatou.jpeg",
   },
   {
-    name: "Robert Sene",
+    name: "Robert Sene -&gt; Benjamin Aw",
     role: "Professeur de Philosophie",
     imageUrl:
       "/Robert Sene.jpeg",
@@ -41,7 +41,7 @@ const people = [
 export default function About() {
   return (
     <div className="bg-white py-24 ">
-      <div className="mx-auto mt-20 grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 grid-cols-1">
+      <div className="mx-auto mt-20 lg:mt-52 grid max-w-7xl gap-x-10 gap-y-20 px-6 lg:px-0 grid-cols-1 lg:grid-cols-2">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Faites connaissance avec l’équipe
@@ -64,15 +64,15 @@ export default function About() {
         </div>
         <ul
           role="list"
-          className=" gap-x-8 gap-y-12 grid grid-cols-1 lg:grid-cols-3  "
+          className=" gap-x-4 gap-y-12 grid items-center grid-cols-1 lg:grid-cols-2  "
         >
           {people.map((person) => (
             <li key={person.name}>
               <div className="flex items-center gap-x-6">
-              <img src={person.imageUrl} className="w-20 h-20 object-cover rounded-full" alt="" />
+              <img src={person.imageUrl} className="w-16 h-16 object-cover rounded-full" alt="" />
                 <div>
-                  <h3 className="text-base font-bold leading-7 tracking-tight text-gray-900">
-                    {person.name}
+                  <h3 dangerouslySetInnerHTML={{__html: person.name}} className="text-base font-bold leading-7 tracking-tight text-gray-900">
+                
                   </h3>
                   <p className="text-sm font-bold leading-6 text-pr">
                     {person.role}

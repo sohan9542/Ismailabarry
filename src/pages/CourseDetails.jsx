@@ -81,7 +81,7 @@ const CourseDetails = () => {
       <div className=" mt-10 px-3 lg:px-0">
         <div className=" max-w-7xl mx-auto pb-20">
           <h1 className="text-center text-2xl lg:text-4xl pt-20 pb-10 font-bold text-pr">
-            NOTE
+          Notes personnelles
           </h1>
           <Note />
         </div>
@@ -89,7 +89,7 @@ const CourseDetails = () => {
       <div className="bg-[#451019] mt-10 px-3 lg:px-0">
         <div className=" max-w-7xl mx-auto pb-20">
           <h1 className="text-center text-2xl lg:text-4xl pt-20 pb-10 font-bold text-white">
-            La communauté ❓
+          Le Panel 🛖
           </h1>
           <AskQuestionSection />
         </div>
@@ -362,7 +362,7 @@ const ExamSection = ({ questions, setAllVideos, allVideos, id,setOpen }) => {
       setCheckOne(0);
       if (checkOne === questions[questionDone].answerIndex) {
         setRightAnswer(rightAnswer + 1);
-        toast.success("Félicitations vous avez donné une réponse écrite 🎉", {
+        toast.success("Félicitations, vous avez trouvé la bonne réponse 🎉", {
           position: "top-center",
           autoClose: 2000,
           hideProgressBar: false,
@@ -453,8 +453,7 @@ const ExamSection = ({ questions, setAllVideos, allVideos, id,setOpen }) => {
 
 {questionDone >= questions?.length && (
               <h1 className="text-center lg:whitespace-nowrap text-xl lg:text-4xl py-10 font-bold text-pr ">
-                tu as donné {rightAnswer} bonnes réponses sur{" "}
-                {questions?.length}!🎉
+                Vous avez trouvé {rightAnswer} bonnes réponses sur {questions?.length}!🎉
               </h1>
             )}
         {questionDone >= questions?.length === false && (
@@ -468,13 +467,13 @@ const ExamSection = ({ questions, setAllVideos, allVideos, id,setOpen }) => {
               type="button"
               className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
             >
-              Précédente
+              Précédent
             </button>
             <button
               type="submit"
               className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"
             >
-              Suivante
+              Suivant
             </button>
           </div>
         )}
@@ -487,7 +486,7 @@ const AskQuestionSection = () => {
   const [question, setQuestion] = useState("");
   const [questionsList, setQuestionsList] = useState([
     {
-      question: "Lorem ipsum dolor sit amet consectetur ?",
+      question: "Les questions et contributions d’autres élèves",
       answer: "",
       showAnswer: false,
     },
@@ -519,7 +518,7 @@ const AskQuestionSection = () => {
     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 mx-auto mt-8">
       <div className="mt-8">
         <h2 className="text-xl font-bold text-white">
-          Questions précédemment posées 🤔
+        Questions précédemment posées 🤔
         </h2>
         {questionsList.map((q, index) => (
           <div
@@ -536,11 +535,7 @@ const AskQuestionSection = () => {
             {q.showAnswer && (
               <div className="mt-2">
                 <div className=" rounded-md border-t border-hvr text-sm pt-2 text-white">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Rerum consequatur vero vitae qui doloremque, consectetur
-                  ducimus consequuntur ea error perferendis. Quidem velit ea
-                  eaque quam dicta voluptatem, alias debitis? Ex sapiente
-                  eveniet harum. Dicta vitae eaque totam.
+                Ici vous trouverez toutes les questions et contributions d’autres élèves de votre niveau, pour une meilleure compréhension des cours.
                 </div>
               </div>
             )}
