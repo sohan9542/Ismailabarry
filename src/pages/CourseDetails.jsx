@@ -123,7 +123,7 @@ const CourseDetails = () => {
 
       <div className="w-full bg-[#451019] py-10 px-3 lg:px-0">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-1 mt-10">
+          <div className="flex items-center gap-1 ">
             <p className="text-gray-50">Suggestion{">"} </p>
             <h1 className="py-2 text-2xl font-bold text-white">
               {videoObj?.category} vidéos
