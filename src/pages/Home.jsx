@@ -30,7 +30,10 @@ function Home() {
           <div className="w-full mt-5">
             <div className="lg:max-w-4xl mx-auto">
               <h1 className="text-4xl heading_gradient text-center font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Rendons l'apprentissage plus ludique !
+                {/* Rendons l'apprentissage plus ludique ! */}
+                Rendons l'apprentissage
+                <br className="hidden lg:block"/>
+plus ludique !
               </h1>
               <p className="mt-6 text-lg leading-8 text-center text-gray-600">
                 <span className="text-pr font-medium "> Jangflix 'est </span>{" "}
@@ -194,8 +197,8 @@ function JangflixFor() {
     <div className="bg-gray-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-16  lg:max-w-none ">
-          <h2 className="text-4xl font-bold text-gray-900">
-            À qui s'adresse la plateforme Jangflix :
+          <h2 className="text-4xl font-bold text-center text-gray-900">
+            À qui s'adresse la plateforme Jangflix ?
           </h2>
 
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-10 lg:space-y-0">
@@ -341,7 +344,7 @@ function Pricing() {
                   Essayer Gratuitement
                 </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Vous disposez d’une période gratuite d’essai de 8 semaines.
+                  Vous disposez d’une période gratuite <br className="hidden lg:block"/>  d’essai de 8 semaines.
                 </p>
                 <ul
                   role="list"
@@ -376,7 +379,7 @@ function Pricing() {
                   Essayer Gratuitement
                 </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Vous disposez d’une période gratuite d’essai de 8 semaines.
+                  Vous disposez d’une période gratuite <br className="hidden lg:block"/> d’essai de 8 semaines.
                 </p>
                 <ul
                   role="list"
@@ -409,7 +412,7 @@ function Pricing() {
                   Essayer Gratuitement
                 </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                  Vous disposez d’une période gratuite d’essai de 8 semaines.
+                  Vous disposez d’une période gratuite <br className="hidden lg:block"/> d’essai de 8 semaines.
                 </p>
                 <ul
                   role="list"
