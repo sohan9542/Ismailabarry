@@ -41,7 +41,7 @@ const CourseDetails = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen   pt-32 pb-20 ">
+    <div className="min-h-screen   pt-32 pb-0 ">
       <Discover open={open} setOpen={setOpen} />
       <div className="bg-white w-full px-3 lg:px-0">
         <div className="max-w-7xl px-2 lg:px-0 mx-auto">
@@ -56,7 +56,7 @@ const CourseDetails = () => {
         </div>
       </div>
       <div className="bg-[#451019] mt-10 px-3 lg:px-0">
-        <div className="py-20 max-w-7xl mx-auto  ">
+        <div className="py-16 max-w-7xl mx-auto  ">
           <p className="text-white"> {videoObj?.subject}</p>
           <h1 className="text-2xl font-semibold text-white">
             {videoObj?.title}
@@ -65,7 +65,7 @@ const CourseDetails = () => {
         </div>
       </div>
       <div className=" max-w-7xl mx-auto pb-10 px-3 lg:px-0">
-        <h1 className="text-center text-2xl lg:text-4xl pt-20 pb-10 font-bold ">
+        <h1 className="text-center text-2xl lg:text-4xl pt-16 pb-0 font-bold ">
           Testez Vos Connaissances🚀
         </h1>
         {videoObj?.questions && (
@@ -79,24 +79,24 @@ const CourseDetails = () => {
         )}
       </div>
       <div className=" mt-10 px-3 lg:px-0">
-        <div className=" max-w-7xl mx-auto pb-20">
-          <h1 className="text-center text-2xl lg:text-4xl pt-20 pb-10 font-bold text-pr">
+        <div className=" max-w-7xl mx-auto pb-0">
+          <h1 className="text-center text-2xl lg:text-4xl pt-0 pb-0 font-bold text-pr">
           Notes personnelles
           </h1>
           <Note />
         </div>
       </div>
       <div className="bg-[#451019] mt-10 px-3 lg:px-0">
-        <div className=" max-w-7xl mx-auto pb-20">
-          <h1 className="text-center text-2xl lg:text-4xl pt-20 pb-10 font-bold text-white">
+        <div className=" max-w-7xl mx-auto pb-16">
+          <h1 className="text-center text-2xl lg:text-4xl pt-16 pb-10 font-bold text-white">
           Le Panel 🛖
           </h1>
           <AskQuestionSection />
         </div>
       </div>
 
-      <div className="mt-20 py-20 max-w-7xl mx-auto px-3 lg:px-0">
-        <h1 className="text-center text-4xl text-pr  pb-20 font-bold ">
+      <div className="mt-0 py-16 max-w-7xl mx-auto px-3 lg:px-0">
+        <h1 className="text-center text-4xl text-pr  pb-10 font-bold ">
           Ma Progression⭐
         </h1>
         <div className=" flex flex-col lg:flex-row gap-10 lg:gap-32 mt-10 items-center justify-center">
@@ -116,7 +116,7 @@ const CourseDetails = () => {
             </p>
           </div>
         </div>
-        <h1 className="text-center text-xl lg:text-4xl pt-32 font-bold text-pr ">
+        <h1 className="text-center text-xl lg:text-4xl pt-16 font-bold text-pr ">
           Vous êtes sur une bonne lancée, maintenez ce rythme !🎉
         </h1>
       </div>
@@ -150,7 +150,7 @@ const CourseDetails = () => {
       </div>
 
   
-      <div className="flex items-center justify-center w-full mt-40 mb-10 px-3 lg:px-0">
+      <div className="flex items-center justify-center w-full mt-16 mb-10 px-3 lg:px-0">
         <Link
           to="/courses"
           className="rounded-md bg-pr px-3.5 py-2.5 text-sm font-semibold text-gray-50 shadow-sm hover:bg-sr hover:text-pr focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pr"

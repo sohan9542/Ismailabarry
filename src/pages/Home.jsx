@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import { CalendarDaysIcon, HandRaisedIcon } from "@heroicons/react/24/outline";
-import { AiFillStar } from "react-icons/ai";
+import { BiMoviePlay } from "react-icons/bi";
+import { GiMaterialsScience } from "react-icons/gi";
+import { MdQuiz } from "react-icons/md";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import React, { useContext, useState } from "react";
 import {
@@ -12,17 +14,16 @@ import {
   AiOutlineBook,
   AiOutlineMobile,
 } from "react-icons/ai";
-import { BsFillChatDotsFill } from "react-icons/bs";
+import { BsFillChatDotsFill,BsHouseHeartFill } from "react-icons/bs";
 import { IoMdSchool } from "react-icons/io";
 import { RapperContent } from "../App";
 import VideoComponent from "../components/VideoComponent";
 
- function Home() {
- 
+function Home() {
   return (
     <div className="bg-white">
       <div className="relative  isolate px-6 pt-14 lg:px-8">
-        <div className="mx-auto max-w-7xl items-center  w-full grid grid-cols-1 pt-28  lg:pb-40  ">
+        <div className="mx-auto max-w-7xl items-center  w-full grid grid-cols-1 pt-24  lg:pb-16  ">
           <div className=" flex  items-center justify-center mb-6">
             <img src="/logo.png" className="lg:h-96" alt="" />
           </div>
@@ -69,7 +70,7 @@ import VideoComponent from "../components/VideoComponent";
     </div>
   );
 }
-export default Home
+export default Home;
 /*
   This example requires some changes to your config:
   
@@ -141,46 +142,48 @@ function Courses() {
   return (
     <div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-20">
-            <h2 className="text-4xl font-bold text-center text-gray-900 pb-10">
-              Médiathèque{" "}
-            </h2>
+        <div className="mx-auto max-w-2xl py-16 lg:max-w-none ">
+          <h2 className="text-4xl font-bold text-center text-gray-900 pb-10">
+            Médiathèque{" "}
+          </h2>
 
-            <div className=" p-5  bg-[#451019] w-full  rounded-xl">
-            <h2 className="text-3xl font-bold  text-white  ">
-            Troisième
-            </h2>
-              <div className=" grid lg:grid-cols-3 mt-5 lg:gap-x-6 gap-y-9 ">
-                {allVideos
-                  ?.filter((i) => i?.grade === "Troisième")
-                  .map((item, ind) => (
-                   <div>
-                     <VideoComponent item={item} />
-                     <p className="text-white pt-2 font-bold text-lg">{item?.title}</p>
-                     <p className="text-white pt-1 font-bold text-sm">{item?.subject}</p>
-                   </div>
-                  ))}
-              </div>
+          <div className=" p-5  bg-[#451019] w-full  rounded-xl">
+            <h2 className="text-3xl font-bold  text-white  ">Troisième</h2>
+            <div className=" grid lg:grid-cols-3 mt-5 lg:gap-x-6 gap-y-9 ">
+              {allVideos
+                ?.filter((i) => i?.grade === "Troisième")
+                .map((item, ind) => (
+                  <div>
+                    <VideoComponent item={item} />
+                    <p className="text-white pt-2 font-bold text-lg">
+                      {item?.title}
+                    </p>
+                    <p className="text-white pt-1 font-bold text-sm">
+                      {item?.subject}
+                    </p>
+                  </div>
+                ))}
             </div>
-            <div className=" p-5 mt-10  bg-[#451019] w-full  rounded-xl">
-            <h2 className="text-3xl font-bold  text-white  ">
-            Terminale
-            </h2>
-              <div className=" grid lg:grid-cols-3 mt-5 lg:gap-x-6 gap-y-9 ">
-                {allVideos
-                  ?.filter((i) => i?.grade === "Terminale")
-                  .map((item, ind) => (
-                   <div>
-                     <VideoComponent item={item} />
-                     <p className="text-white pt-2 font-bold text-lg">{item?.title}</p>
-                     <p className="text-white pt-1 font-bold text-sm">{item?.subject}</p>
-                   </div>
-                  ))}
-              </div>
-            </div>
-
-     
           </div>
+          <div className=" p-5 mt-10  bg-[#451019] w-full  rounded-xl">
+            <h2 className="text-3xl font-bold  text-white  ">Terminale</h2>
+            <div className=" grid lg:grid-cols-3 mt-5 lg:gap-x-6 gap-y-9 ">
+              {allVideos
+                ?.filter((i) => i?.grade === "Terminale")
+                .map((item, ind) => (
+                  <div>
+                    <VideoComponent item={item} />
+                    <p className="text-white pt-2 font-bold text-lg">
+                      {item?.title}
+                    </p>
+                    <p className="text-white pt-1 font-bold text-sm">
+                      {item?.subject}
+                    </p>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -226,7 +229,7 @@ const stats = [
 
 function Services() {
   return (
-    <div className="relative isolate mt-10 lg:mt-0 overflow-hidden py-24 sm:py-32">
+    <div className="relative isolate mt-10 lg:mt-0 overflow-hidden py-16 ">
       <img
         src="/service.webp"
         alt=""
@@ -274,39 +277,39 @@ const includedFeatures = [
 
 const iconsAndDescriptions = [
   {
-    icon: <AiFillVideoCamera className="text-pr"/>,
+    icon: <AiFillVideoCamera className="text-pr" />,
     description: "Tous les cours en vidéos",
   },
   {
-    icon: <AiOutlineUsergroupAdd className="text-pr"/>,
+    icon: <AiOutlineUsergroupAdd className="text-pr" />,
     description: "Travaux pratique",
   },
   {
-    icon: <BsFillChatDotsFill className="text-pr"/>,
+    icon: <BsFillChatDotsFill className="text-pr" />,
     description: "Correction de TD",
   },
   {
-    icon: <AiOutlineFilePdf className="text-pr"/>,
+    icon: <AiOutlineFilePdf className="text-pr" />,
     description: "Fiches synthétiques de cours",
   },
   {
-    icon: <AiOutlineCheckCircle className="text-pr"/>,
+    icon: <AiOutlineCheckCircle className="text-pr" />,
     description: "Suivi de progression",
   },
   {
-    icon: <AiOutlineUsergroupAdd className="text-pr"/>,
+    icon: <AiOutlineUsergroupAdd className="text-pr" />,
     description: "Accès à la communauté",
   },
   {
-    icon: <IoMdSchool className="text-pr"/>,
+    icon: <IoMdSchool className="text-pr" />,
     description: "Support professoral",
   },
   {
-    icon: <AiOutlineBook className="text-pr"/>,
+    icon: <AiOutlineBook className="text-pr" />,
     description: "Révisions en ligne",
   },
   {
-    icon: <AiOutlineMobile className="text-pr"/>,
+    icon: <AiOutlineMobile className="text-pr" />,
     description: "Accès aux applications mobile",
   },
 ];
@@ -315,7 +318,7 @@ function Pricing() {
   return (
     <div className="bg-white py-16 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto mt-16 w-full rounded-3xl ring-1 ring-gray-200 pt-5 ">
+        <div className="mx-auto  w-full rounded-3xl ring-1 ring-gray-200 pt-5 ">
           <h2 className=" text-xl lg:text-4xl font-bold tracking-tight text-gray-900  text-center">
             Abonnements
           </h2>
@@ -325,10 +328,10 @@ function Pricing() {
                 <p className="text-base font-semibold text-gray-600">Mensuel</p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
                   <span className="text-5xl font-bold tracking-tight text-gray-900">
-                    0,00 
+                    0,00
                   </span>
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                  FCFA
+                    FCFA
                   </span>
                 </p>
                 <Link
@@ -338,7 +341,7 @@ function Pricing() {
                   Essayer Gratuitement
                 </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                 Vous disposez d’une période gratuite d’essai de 8 semaines.
+                  Vous disposez d’une période gratuite d’essai de 8 semaines.
                 </p>
                 <ul
                   role="list"
@@ -356,14 +359,14 @@ function Pricing() {
             <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto px-8 ">
                 <p className="text-base font-semibold text-gray-600">
-                Trimestriel
+                  Trimestriel
                 </p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
                   <span className="text-5xl font-bold tracking-tight text-gray-900">
-                    0,00 
+                    0,00
                   </span>
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                  FCFA
+                    FCFA
                   </span>
                 </p>
                 <Link
@@ -373,8 +376,7 @@ function Pricing() {
                   Essayer Gratuitement
                 </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                Vous disposez d’une période gratuite d’essai de 8 semaines.
-
+                  Vous disposez d’une période gratuite d’essai de 8 semaines.
                 </p>
                 <ul
                   role="list"
@@ -391,15 +393,13 @@ function Pricing() {
             </div>
             <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
               <div className="mx-auto px-8 ">
-                <p className="text-base font-semibold text-gray-600">
-                Annuel
-                </p>
+                <p className="text-base font-semibold text-gray-600">Annuel</p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
                   <span className="text-5xl font-bold tracking-tight text-gray-900">
-                    0,00 
+                    0,00
                   </span>
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
-                  FCFA
+                    FCFA
                   </span>
                 </p>
                 <Link
@@ -409,8 +409,7 @@ function Pricing() {
                   Essayer Gratuitement
                 </Link>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
-                Vous disposez d’une période gratuite d’essai de 8 semaines.
-
+                  Vous disposez d’une période gratuite d’essai de 8 semaines.
                 </p>
                 <ul
                   role="list"
@@ -425,7 +424,6 @@ function Pricing() {
                 </ul>
               </div>
             </div>
-       
           </div>
         </div>
       </div>
@@ -435,37 +433,36 @@ function Pricing() {
 
 function Trusted() {
   return (
-    <div className="bg-white pt-6 pb-20">
+    <div className="bg-white  pb-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
-        Nos Partenaires et Collaborateurs
+          Nos Partenaires et Collaborateurs
         </h2>
-      <div className="flex items-center justify-center">
-      <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center  gap-x-8 gap-y-10  lg:grid-cols-3 ">
-          <img
-            className="col-span-2 w-full object-contain lg:col-span-1"
-            src="/navi.jpeg"
-            alt="Transistor"
-            width={158}
-            height={48}
-          />
-          <img
-            className="col-span-2  w-full object-contain lg:col-span-1"
-            src="/ari.webp"
-            alt="Reform"
-            width={158}
-            height={48}
-          />
-          <img
-            className="col-span-2 w-full object-contain lg:col-span-1"
-            src="/intech .png"
-            alt="Tuple"
-            width={158}
-            height={48}
-          />
-        
+        <div className="flex items-center justify-center">
+          <div className="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center  gap-x-8 gap-y-10  lg:grid-cols-3 ">
+            <img
+              className="col-span-2 w-full object-contain lg:col-span-1"
+              src="/navi.jpeg"
+              alt="Transistor"
+              width={158}
+              height={48}
+            />
+            <img
+              className="col-span-2  w-full object-contain lg:col-span-1"
+              src="/ari.webp"
+              alt="Reform"
+              width={158}
+              height={48}
+            />
+            <img
+              className="col-span-2 w-full object-contain lg:col-span-1"
+              src="/intech .png"
+              alt="Tuple"
+              width={158}
+              height={48}
+            />
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );
@@ -473,16 +470,19 @@ function Trusted() {
 
 function Subscribe() {
   return (
-    <div className="relative isolate overflow-hidden bg-[#451019] py-16 sm:py-24 lg:py-32">
+    <div className="relative isolate overflow-hidden bg-[#451019] py-16 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
           <div className="  lg:col-span-2">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Abonnez-vous à notre newsletter
-
+              Abonnez-vous à notre newsletter
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-            “Jangflix est en constante expansion et croissance. Notre newsletter vous informera de nos ajouts de contenu les plus récents, des cours en direct programmés ou des sessions de questions et vous fournira des informations générales sur nos professeurs.”
+              “Jangflix est en constante expansion et croissance. Notre
+              newsletter vous informera de nos ajouts de contenu les plus
+              récents, des cours en direct programmés ou des sessions de
+              questions et vous fournira des informations générales sur nos
+              professeurs.”
             </p>
             <div className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
@@ -506,7 +506,6 @@ function Subscribe() {
             </div>
           </div>
           <dl className="grid grid-cols-1 gap-x-8 gap-y-10 ">
-           
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                 <HandRaisedIcon
@@ -516,8 +515,10 @@ function Subscribe() {
               </div>
               <dt className="mt-4 font-semibold text-white">Non au Spam</dt>
               <dd className="mt-2 text-sm text-gray-50">
-              “Ne vous inquiétez pas, nous ne vous enverrons pas des tonnes d'e-mails. Les newsletters ne seront envoyées que s'il y a des informations pertinentes à partager et le contenu sera court et précis.”
-
+                “Ne vous inquiétez pas, nous ne vous enverrons pas des tonnes
+                d'e-mails. Les newsletters ne seront envoyées que s'il y a des
+                informations pertinentes à partager et le contenu sera court et
+                précis.”
               </dd>
             </div>
           </dl>
@@ -529,64 +530,47 @@ function Subscribe() {
 
 function Testimonials() {
   return (
-    <div className=" pt-24 pb-32 bg-[#451019]">
+    <div className=" pt-16 pb-16 bg-[#451019]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="text-center text-4xl font-semibold leading-8 text-white">
-          Ce que les gens disent de Jangflix ?
+          La plateforme Jangflix c’est :
         </h2>
-        <di className=" grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
+        <di className=" grid grid-cols-1 lg:grid-cols-4 gap-5 mt-20">
           <div className="bg-white p-4 rounded-xl">
-            <h1 className="text-xl font-semibold">Adji Marième Diop</h1>
-            <p className="text-pr font-medium">Parent</p>
-            <p className="text-sm font-semibold py-3">
-              “C'est la première fois que ma fille étudie sans se faire forcer.
-              Elle aime vraiment regarder Jangflix et ses notes se sont
-              également améliorées.”
-            </p>
-            <div className="flex items-center gap-1 jc">
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
+            <div className="flex items-center justify-center mt-4">
+              <div className="w-24 h-24 flex items-center justify-center border rounded-full border-pr">
+                <BiMoviePlay className="w-16 h-16 text-pr" />
+              </div>
             </div>
+            <h1 className="text-xl font-bold text-center text-pr mt-4">Des <br className="hidden lg:block"/> vidéos  interactives</h1>
+            <p className="text-center mt-1 text-pr font-medium">Pour mieux <br className="hidden lg:block"/> comprendre  vos cours</p>
           </div>
           <div className="bg-white p-4 rounded-xl">
-            <h1 className="text-xl font-semibold">Abdallah Mbaye</h1>
-            <p className="text-pr font-medium">Professeur d’Histoire</p>
-            <p className="text-sm font-semibold py-3">
-              “Je suis enseignant et j'ai récemment commencé à intégrer Jangflix
-              dans mon programme. Mes élèves ont plus d’assurance dans leur
-              préparation des devoirs avec l’utilisation des QCM intuitifs de la
-              plateforme. Ils adorent Jangflix, c'est nouveau, différent et
-              amusant.”
-            </p>
-            <div className="flex items-center gap-1 jc">
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
+            <div className="flex items-center justify-center mt-4">
+              <div className="w-24 h-24 flex items-center justify-center border rounded-full border-pr">
+                <MdQuiz className="w-16 h-16 text-pr" />
+              </div>
             </div>
+            <h1 className="text-xl font-bold text-center text-pr mt-4">Des <br className="hidden lg:block"/> Quiz  amusants</h1>
+            <p className="text-center mt-1 text-pr font-medium">Pour tester <br className="hidden lg:block"/> vos  connaissances</p>
           </div>
           <div className="bg-white p-4 rounded-xl">
-            <h1 className="text-xl font-semibold">Ousseynou Mbodji</h1>
-            <p className="text-pr font-medium">DRH Yela SARL</p>
-            <p className="text-sm font-semibold py-3">
-              “Dans notre entreprise, nous recherchons toujours des moyens de
-              redonner à la société et croyons que l'éducation est un excellent
-              domaine pour nos efforts sociaux. Non seulement soutenir
-              l'éducation des jeunes étudiants par le biais d'abonnements
-              sponsorisés est une grande cause, mais c'est aussi un
-              investissement dans la future main-d'œuvre de notre pays..”
-            </p>
-            <div className="flex items-center gap-1 jc">
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
-              <AiFillStar className="w-6 h-6 text-yellow-500" />
+            <div className="flex items-center justify-center mt-4">
+              <div className="w-24 h-24 flex items-center justify-center border rounded-full border-pr">
+                <GiMaterialsScience className="w-16 h-16 text-pr" />
+              </div>
             </div>
+            <h1 className="text-xl font-bold text-center text-pr mt-4">Des fonctionnalités innovantes</h1>
+            <p className="text-center mt-1 text-pr font-medium">Pour rendre l’apprentissage <br className="hidden lg:block"/> plus facile</p>
+          </div>
+          <div className="bg-white p-4 rounded-xl">
+            <div className="flex items-center justify-center mt-4">
+              <div className="w-24 h-24 flex items-center justify-center border rounded-full border-pr">
+                <BsHouseHeartFill className="w-16 h-16 text-pr" />
+              </div>
+            </div>
+            <h1 className="text-xl font-bold text-center text-pr mt-4">Une communauté engagée</h1>
+            <p className="text-center mt-1 text-pr font-medium">Pour partager vos expériences et trouver des réponses à vos questions</p>
           </div>
         </di>
       </div>
@@ -663,7 +647,7 @@ const FaqSection = () => {
 
   return (
     <div className="bg-[#451019] px-3 lg:px-0">
-      <div className="max-w-7xl py-24 mx-auto">
+      <div className="max-w-7xl py-16 mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-white">
           Foire aux questions
         </h2>
