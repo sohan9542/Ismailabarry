@@ -20,7 +20,7 @@ export let videos = [
     quiz: 0,
     category: "Histoire",
     grade: "Terminale",
-    thumbnile: "/1.png"
+    thumbnile: "/1.png",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export let videos = [
     quiz: 0,
     category: "Philosophie",
     grade: "Terminale",
-    thumbnile: "/2.png"
+    thumbnile: "/2.png",
   },
 
   {
@@ -43,30 +43,28 @@ export let videos = [
     title: "Comment Faire un Raisonnement Scientifique en SVT",
     description:
       "En science, pour arriver souvent à des conclusions, il faut partir d’hypothèses, les confirmer autant de fois que possible avant de valider les résultats et d’en faire une loi. Après cette vidéo, la démarche scientifique n’aura plus aucun secret pour vous.",
-    videoUrl:
-      "https://drive.google.com/file/d/1DtxE8z9RcOFZNWqjFcIdeHyO2aLQYBaW/preview",
+    videoUrl:"https://drive.google.com/file/d/1AlylKfiV0uWF3vtskqO-BrqivFxI4iwC/preview",
     progress: 0,
     subject: "SVT – Terminale S",
     questions: question3,
     quiz: 0,
     category: "Sciences",
     grade: "Terminale",
-    thumbnile: "/3.png"
+    thumbnile: "/3.png",
   },
   {
     id: 4,
     title: "La Chronologie en Géologie",
     description:
       "Vous êtes-vous une fois demandé comment on pouvait calculer l’âge de la terre et donner les dates de certains évènements géologiques ? Dans cette vidéo nous allons vous montrer les différentes méthodes ainsi qu’un rappel historique des différentes ères jusqu’à celle que nous vivons. ",
-    videoUrl:
-      "https://drive.google.com/file/d/1AlylKfiV0uWF3vtskqO-BrqivFxI4iwC/preview",
+    videoUrl: "https://drive.google.com/file/d/1DtxE8z9RcOFZNWqjFcIdeHyO2aLQYBaW/preview",
     progress: 0,
     subject: "SVT - Troisième",
     questions: question4,
     quiz: 0,
     category: "Sciences",
     grade: "Troisième",
-    thumbnile: "/4.png"
+    thumbnile: "/4.png",
   },
   {
     id: 5,
@@ -81,7 +79,7 @@ export let videos = [
     quiz: 0,
     category: "Histoire",
     grade: "Troisième",
-    thumbnile: "/5.png"
+    thumbnile: "/5.png",
   },
   {
     id: 6,
@@ -92,10 +90,10 @@ export let videos = [
       "https://drive.google.com/file/d/1JtuxXUi5OHSdqtfHVcLVfecvnZFyEZ4_/preview",
     progress: 0,
     subject: "Anglais - Troisième ",
-    questions: question2,
+    questions: [],
     quiz: 0,
     category: "Anglais",
     grade: "Troisième",
-    thumbnile: "/6.png"
+    thumbnile: "/6.png",
   },
 ];
