@@ -50,7 +50,7 @@ export let videos = [
     quiz: 0,
     category: "Sciences",
     grade: "Terminale",
-    thumbnile: "/3.png",
+    thumbnile: "/4.png",
   },
   {
     id: 4,
@@ -64,7 +64,8 @@ export let videos = [
     quiz: 0,
     category: "Sciences",
     grade: "Troisième",
-    thumbnile: "/4.png",
+
+    thumbnile: "/3.png",
   },
   {
     id: 5,
